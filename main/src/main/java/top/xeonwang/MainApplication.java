@@ -1,13 +1,11 @@
-package top.xeonwang.ssfinl;
+package top.xeonwang;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SsfinlApplication {
-
+public class MainApplication {
     public static void main(String[] args) {
-        SpringApplication.run(SsfinlApplication.class, args);
+        SpringApplication.run(MainApplication.class, args);
     }
-
 }
