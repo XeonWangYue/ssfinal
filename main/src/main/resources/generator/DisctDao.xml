@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.xeonwang.dao.DisctDao">
+  <resultMap id="BaseResultMap" type="top.xeonwang.model.Disct">
+    <id column="key" jdbcType="BIGINT" property="key" />
+    <result column="cityName" jdbcType="VARCHAR" property="cityname" />
+    <result column="cityEnglishName" jdbcType="VARCHAR" property="cityenglishname" />
+    <result column="city_zipCode" jdbcType="VARCHAR" property="cityZipcode" />
+    <result column="city_confirmedCount" jdbcType="BIGINT" property="cityConfirmedcount" />
+    <result column="city_suspectedCount" jdbcType="BIGINT" property="citySuspectedcount" />
+    <result column="city_curedCount" jdbcType="BIGINT" property="cityCuredcount" />
+    <result column="city_deadCount" jdbcType="BIGINT" property="cityDeadcount" />
+    <result column="updateTime" jdbcType="DATE" property="updatetime" />
+    <result column="city_currentconfirmedCount" jdbcType="BIGINT" property="cityCurrentconfirmedcount" />
+    <result column="increasedconfirmedCount" jdbcType="BIGINT" property="increasedconfirmedcount" />
+    <result column="label" jdbcType="TINYINT" property="label" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    `key`, cityName, cityEnglishName, city_zipCode, city_confirmedCount, city_suspectedCount, 
+    city_curedCount, city_deadCount, updateTime, city_currentconfirmedCount, increasedconfirmedCount, 
+    `label`
+  </sql>
+  <select id="selectByExample" parameterType="top.xeonwang.model.DisctExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from ssfinal..disct
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from ssfinal..disct
+    where `key` = #{key,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from ssfinal..disct
+    where `key` = #{key,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="top.xeonwang.model.DisctExample">
+    delete from ssfinal..disct
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="top.xeonwang.model.Disct">
+    <selectKey keyProperty="key" order="AFTER" resultType="java.lang.Long">
+      MariaDB
+    </selectKey>
+    insert into ssfinal..disct (cityName, cityEnglishName, city_zipCode, 
+      city_confirmedCount, city_suspectedCount, city_curedCount, 
+      city_deadCount, updateTime, city_currentconfirmedCount, 
+      increasedconfirmedCount, `label`)
+    values (#{cityname,jdbcType=VARCHAR}, #{cityenglishname,jdbcType=VARCHAR}, #{cityZipcode,jdbcType=VARCHAR}, 
+      #{cityConfirmedcount,jdbcType=BIGINT}, #{citySuspectedcount,jdbcType=BIGINT}, #{cityCuredcount,jdbcType=BIGINT}, 
+      #{cityDeadcount,jdbcType=BIGINT}, #{updatetime,jdbcType=DATE}, #{cityCurrentconfirmedcount,jdbcType=BIGINT}, 
+      #{increasedconfirmedcount,jdbcType=BIGINT}, #{label,jdbcType=TINYINT})
+  </insert>
+  <insert id="insertSelective" parameterType="top.xeonwang.model.Disct">
+    <selectKey keyProperty="key" order="AFTER" resultType="java.lang.Long">
+      MariaDB
+    </selectKey>
+    insert into ssfinal..disct
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="cityname != null">
+        cityName,
+      </if>
+      <if test="cityenglishname != null">
+        cityEnglishName,
+      </if>
+      <if test="cityZipcode != null">
+        city_zipCode,
+      </if>
+      <if test="cityConfirmedcount != null">
+        city_confirmedCount,
+      </if>
+      <if test="citySuspectedcount != null">
+        city_suspectedCount,
+      </if>
+      <if test="cityCuredcount != null">
+        city_curedCount,
+      </if>
+      <if test="cityDeadcount != null">
+        city_deadCount,
+      </if>
+      <if test="updatetime != null">
+        updateTime,
+      </if>
+      <if test="cityCurrentconfirmedcount != null">
+        city_currentconfirmedCount,
+      </if>
+      <if test="increasedconfirmedcount != null">
+        increasedconfirmedCount,
+      </if>
+      <if test="label != null">
+        `label`,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="cityname != null">
+        #{cityname,jdbcType=VARCHAR},
+      </if>
+      <if test="cityenglishname != null">
+        #{cityenglishname,jdbcType=VARCHAR},
+      </if>
+      <if test="cityZipcode != null">
+        #{cityZipcode,jdbcType=VARCHAR},
+      </if>
+      <if test="cityConfirmedcount != null">
+        #{cityConfirmedcount,jdbcType=BIGINT},
+      </if>
+      <if test="citySuspectedcount != null">
+        #{citySuspectedcount,jdbcType=BIGINT},
+      </if>
+      <if test="cityCuredcount != null">
+        #{cityCuredcount,jdbcType=BIGINT},
+      </if>
+      <if test="cityDeadcount != null">
+        #{cityDeadcount,jdbcType=BIGINT},
+      </if>
+      <if test="updatetime != null">
+        #{updatetime,jdbcType=DATE},
+      </if>
+      <if test="cityCurrentconfirmedcount != null">
+        #{cityCurrentconfirmedcount,jdbcType=BIGINT},
+      </if>
+      <if test="increasedconfirmedcount != null">
+        #{increasedconfirmedcount,jdbcType=BIGINT},
+      </if>
+      <if test="label != null">
+        #{label,jdbcType=TINYINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="top.xeonwang.model.DisctExample" resultType="java.lang.Long">
+    select count(*) from ssfinal..disct
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update ssfinal..disct
+    <set>
+      <if test="record.key != null">
+        `key` = #{record.key,jdbcType=BIGINT},
+      </if>
+      <if test="record.cityname != null">
+        cityName = #{record.cityname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.cityenglishname != null">
+        cityEnglishName = #{record.cityenglishname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.cityZipcode != null">
+        city_zipCode = #{record.cityZipcode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.cityConfirmedcount != null">
+        city_confirmedCount = #{record.cityConfirmedcount,jdbcType=BIGINT},
+      </if>
+      <if test="record.citySuspectedcount != null">
+        city_suspectedCount = #{record.citySuspectedcount,jdbcType=BIGINT},
+      </if>
+      <if test="record.cityCuredcount != null">
+        city_curedCount = #{record.cityCuredcount,jdbcType=BIGINT},
+      </if>
+      <if test="record.cityDeadcount != null">
+        city_deadCount = #{record.cityDeadcount,jdbcType=BIGINT},
+      </if>
+      <if test="record.updatetime != null">
+        updateTime = #{record.updatetime,jdbcType=DATE},
+      </if>
+      <if test="record.cityCurrentconfirmedcount != null">
+        city_currentconfirmedCount = #{record.cityCurrentconfirmedcount,jdbcType=BIGINT},
+      </if>
+      <if test="record.increasedconfirmedcount != null">
+        increasedconfirmedCount = #{record.increasedconfirmedcount,jdbcType=BIGINT},
+      </if>
+      <if test="record.label != null">
+        `label` = #{record.label,jdbcType=TINYINT},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update ssfinal..disct
+    set `key` = #{record.key,jdbcType=BIGINT},
+      cityName = #{record.cityname,jdbcType=VARCHAR},
+      cityEnglishName = #{record.cityenglishname,jdbcType=VARCHAR},
+      city_zipCode = #{record.cityZipcode,jdbcType=VARCHAR},
+      city_confirmedCount = #{record.cityConfirmedcount,jdbcType=BIGINT},
+      city_suspectedCount = #{record.citySuspectedcount,jdbcType=BIGINT},
+      city_curedCount = #{record.cityCuredcount,jdbcType=BIGINT},
+      city_deadCount = #{record.cityDeadcount,jdbcType=BIGINT},
+      updateTime = #{record.updatetime,jdbcType=DATE},
+      city_currentconfirmedCount = #{record.cityCurrentconfirmedcount,jdbcType=BIGINT},
+      increasedconfirmedCount = #{record.increasedconfirmedcount,jdbcType=BIGINT},
+      `label` = #{record.label,jdbcType=TINYINT}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="top.xeonwang.model.Disct">
+    update ssfinal..disct
+    <set>
+      <if test="cityname != null">
+        cityName = #{cityname,jdbcType=VARCHAR},
+      </if>
+      <if test="cityenglishname != null">
+        cityEnglishName = #{cityenglishname,jdbcType=VARCHAR},
+      </if>
+      <if test="cityZipcode != null">
+        city_zipCode = #{cityZipcode,jdbcType=VARCHAR},
+      </if>
+      <if test="cityConfirmedcount != null">
+        city_confirmedCount = #{cityConfirmedcount,jdbcType=BIGINT},
+      </if>
+      <if test="citySuspectedcount != null">
+        city_suspectedCount = #{citySuspectedcount,jdbcType=BIGINT},
+      </if>
+      <if test="cityCuredcount != null">
+        city_curedCount = #{cityCuredcount,jdbcType=BIGINT},
+      </if>
+      <if test="cityDeadcount != null">
+        city_deadCount = #{cityDeadcount,jdbcType=BIGINT},
+      </if>
+      <if test="updatetime != null">
+        updateTime = #{updatetime,jdbcType=DATE},
+      </if>
+      <if test="cityCurrentconfirmedcount != null">
+        city_currentconfirmedCount = #{cityCurrentconfirmedcount,jdbcType=BIGINT},
+      </if>
+      <if test="increasedconfirmedcount != null">
+        increasedconfirmedCount = #{increasedconfirmedcount,jdbcType=BIGINT},
+      </if>
+      <if test="label != null">
+        `label` = #{label,jdbcType=TINYINT},
+      </if>
+    </set>
+    where `key` = #{key,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="top.xeonwang.model.Disct">
+    update ssfinal..disct
+    set cityName = #{cityname,jdbcType=VARCHAR},
+      cityEnglishName = #{cityenglishname,jdbcType=VARCHAR},
+      city_zipCode = #{cityZipcode,jdbcType=VARCHAR},
+      city_confirmedCount = #{cityConfirmedcount,jdbcType=BIGINT},
+      city_suspectedCount = #{citySuspectedcount,jdbcType=BIGINT},
+      city_curedCount = #{cityCuredcount,jdbcType=BIGINT},
+      city_deadCount = #{cityDeadcount,jdbcType=BIGINT},
+      updateTime = #{updatetime,jdbcType=DATE},
+      city_currentconfirmedCount = #{cityCurrentconfirmedcount,jdbcType=BIGINT},
+      increasedconfirmedCount = #{increasedconfirmedcount,jdbcType=BIGINT},
+      `label` = #{label,jdbcType=TINYINT}
+    where `key` = #{key,jdbcType=BIGINT}
+  </update>
+</mapper>
