@@ -1,4 +1,4 @@
-﻿package top.xeonwang.model;
+package top.xeonwang.model;
 
 import java.time.LocalDate;
 import java.util.ArrayList;

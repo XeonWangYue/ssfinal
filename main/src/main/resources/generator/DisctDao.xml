@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="top.xeonwang.dao.DisctDao">
+<mapper namespace="top.xeonwang.mapper.DisctMapper">
   <resultMap id="BaseResultMap" type="top.xeonwang.model.Disct">
     <id column="key" jdbcType="BIGINT" property="key" />
     <result column="cityName" jdbcType="VARCHAR" property="cityname" />
@@ -84,7 +84,7 @@
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from ssfinal..disct
+    from ssfinal.disct
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -95,15 +95,15 @@
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from ssfinal..disct
+    from ssfinal.disct
     where `key` = #{key,jdbcType=BIGINT}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
-    delete from ssfinal..disct
+    delete from ssfinal.disct
     where `key` = #{key,jdbcType=BIGINT}
   </delete>
   <delete id="deleteByExample" parameterType="top.xeonwang.model.DisctExample">
-    delete from ssfinal..disct
+    delete from ssfinal.disct
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -112,7 +112,7 @@
     <selectKey keyProperty="key" order="AFTER" resultType="java.lang.Long">
       MariaDB
     </selectKey>
-    insert into ssfinal..disct (cityName, cityEnglishName, city_zipCode, 
+    insert into ssfinal.disct (cityName, cityEnglishName, city_zipCode, 
       city_confirmedCount, city_suspectedCount, city_curedCount, 
       city_deadCount, updateTime, city_currentconfirmedCount, 
       increasedconfirmedCount, `label`)
@@ -125,7 +125,7 @@
     <selectKey keyProperty="key" order="AFTER" resultType="java.lang.Long">
       MariaDB
     </selectKey>
-    insert into ssfinal..disct
+    insert into ssfinal.disct
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="cityname != null">
         cityName,
@@ -198,13 +198,13 @@
     </trim>
   </insert>
   <select id="countByExample" parameterType="top.xeonwang.model.DisctExample" resultType="java.lang.Long">
-    select count(*) from ssfinal..disct
+    select count(*) from ssfinal.disct
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
-    update ssfinal..disct
+    update ssfinal.disct
     <set>
       <if test="record.key != null">
         `key` = #{record.key,jdbcType=BIGINT},
@@ -248,7 +248,7 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
-    update ssfinal..disct
+    update ssfinal.disct
     set `key` = #{record.key,jdbcType=BIGINT},
       cityName = #{record.cityname,jdbcType=VARCHAR},
       cityEnglishName = #{record.cityenglishname,jdbcType=VARCHAR},
@@ -266,7 +266,7 @@
     </if>
   </update>
   <update id="updateByPrimaryKeySelective" parameterType="top.xeonwang.model.Disct">
-    update ssfinal..disct
+    update ssfinal.disct
     <set>
       <if test="cityname != null">
         cityName = #{cityname,jdbcType=VARCHAR},
@@ -305,7 +305,7 @@
     where `key` = #{key,jdbcType=BIGINT}
   </update>
   <update id="updateByPrimaryKey" parameterType="top.xeonwang.model.Disct">
-    update ssfinal..disct
+    update ssfinal.disct
     set cityName = #{cityname,jdbcType=VARCHAR},
       cityEnglishName = #{cityenglishname,jdbcType=VARCHAR},
       city_zipCode = #{cityZipcode,jdbcType=VARCHAR},
