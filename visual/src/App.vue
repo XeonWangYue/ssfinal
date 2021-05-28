@@ -1,27 +1,20 @@
 <template>
   <div id="app">
-    <Map />
+  <ScreenPage/>
   </div>
+
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-import Map from './components/Map.vue'
+import ScreenPage from './views/ScreenPage.vue'
 export default {
   name: 'App',
-  components: {
-    Map
+  components:{
+    ScreenPage
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
