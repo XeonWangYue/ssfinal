@@ -1,0 +1,32 @@
+server:
+  port: 8081
+spring:
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://localhost:3306/ssfinal
+    username: ssfinal
+    password: 123456
+    acquireIncrement: 11
+    acquireRetryAttempts: 7
+    druid:
+      #初始化时建立物理连接的个数
+      initial-size: 3
+      #最小连接池数量
+      min-idle: 3
+      #最大连接池数量
+      max-active: 100
+      #获取连接时最大等待时间
+      max-wait: 60000
+      validation-query: select 1
+      sql-script-encoding: UTF-8
+
+mybatis:
+  #po对象的包
+  type-aliases-package: top.xeonwang.model
+  #mapper.xml所在的位置
+  mapper-locations: classpath*:generator/*.xml
+  #自动将SQL中查出来的带下划线的字段，转换为驼峰标志，再去匹配类中的属性
+  configuration:
+    #输出产生的SQL
+    #log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true

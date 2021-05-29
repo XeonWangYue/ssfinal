@@ -1,6 +1,6 @@
 <template>
   <div id="map" class="img">
-  
+
   </div>
 </template>
 
@@ -11,10 +11,41 @@ let newPromise = new Promise((resolve) => {
 })
 newPromise.then(() => {
   var chart_a7e5c066973a4c67932ad46d9fcf8f62 = echarts.init(
-    document.getElementById("map"),
-    "white",
-    { renderer: "canvas" }
+      document.getElementById("map"),
+      "white",
+      {renderer: "canvas"}
   );
+
+  let series_model = {
+    type: "line",
+    name: {},
+    connectNulls: false,
+    symbolSize: 4,
+    showSymbol: true,
+    smooth: false,
+    clip: true,
+    step: false,
+    data: {},
+    hoverAnimation: true,
+    label: {
+      show: false,
+      position: "top",
+      margin: 8
+    },
+    lineStyle: {
+      show: true,
+      width: 4,
+      opacity: 1,
+      curveness: 0,
+      type: "solid"
+    },
+    areaStyle: {
+      opacity: 0
+    },
+    zlevel: 0,
+    z: 0
+  };
+  series_model;
   var option_a7e5c066973a4c67932ad46d9fcf8f62 = {
     animation: true,
     animationThreshold: 2000,
@@ -53,7 +84,7 @@ newPromise.then(() => {
     series: [
       {
         type: "line",
-        name: "\u5b9d\u5c71\u533a",
+        name: "宝山区",
         connectNulls: false,
         symbolSize: 4,
         showSymbol: true,
@@ -451,7 +482,7 @@ newPromise.then(() => {
       },
       {
         type: "line",
-        name: "\u5d07\u660e\u533a",
+        name: "崇明区",
         connectNulls: false,
         symbolSize: 4,
         showSymbol: true,
@@ -848,7 +879,7 @@ newPromise.then(() => {
       },
       {
         type: "line",
-        name: "\u5949\u8d24\u533a",
+        name: "奉贤区",
         connectNulls: false,
         symbolSize: 4,
         showSymbol: true,
@@ -1245,7 +1276,7 @@ newPromise.then(() => {
       },
       {
         type: "line",
-        name: "\u8679\u53e3\u533a",
+        name: "虹口区",
         connectNulls: false,
         symbolSize: 4,
         showSymbol: true,
@@ -1642,7 +1673,7 @@ newPromise.then(() => {
       },
       {
         type: "line",
-        name: "\u9ec4\u6d66\u533a",
+        name: "黄浦区",
         connectNulls: false,
         symbolSize: 4,
         showSymbol: true,
@@ -2039,7 +2070,7 @@ newPromise.then(() => {
       },
       {
         type: "line",
-        name: "\u5609\u5b9a\u533a",
+        name: "嘉定区",
         connectNulls: false,
         symbolSize: 4,
         showSymbol: true,
@@ -2436,7 +2467,7 @@ newPromise.then(() => {
       },
       {
         type: "line",
-        name: "\u91d1\u5c71\u533a",
+        name: "金山区",
         connectNulls: false,
         symbolSize: 4,
         showSymbol: true,
@@ -2833,7 +2864,7 @@ newPromise.then(() => {
       },
       {
         type: "line",
-        name: "\u5883\u5916\u6765\u6caa",
+        name: "境外来沪",
         connectNulls: false,
         symbolSize: 4,
         showSymbol: true,
@@ -3230,7 +3261,7 @@ newPromise.then(() => {
       },
       {
         type: "line",
-        name: "\u5883\u5916\u8f93\u5165",
+        name: "境外输入",
         connectNulls: false,
         symbolSize: 4,
         showSymbol: true,
@@ -3627,7 +3658,7 @@ newPromise.then(() => {
       },
       {
         type: "line",
-        name: "\u9759\u5b89\u533a",
+        name: "静安区",
         connectNulls: false,
         symbolSize: 4,
         showSymbol: true,
@@ -4024,7 +4055,7 @@ newPromise.then(() => {
       },
       {
         type: "line",
-        name: "\u95f5\u884c\u533a",
+        name: "闵行区",
         connectNulls: false,
         symbolSize: 4,
         showSymbol: true,
@@ -4421,7 +4452,7 @@ newPromise.then(() => {
       },
       {
         type: "line",
-        name: "\u6d66\u4e1c\u65b0\u533a",
+        name: "浦东新区",
         connectNulls: false,
         symbolSize: 4,
         showSymbol: true,
@@ -4818,7 +4849,7 @@ newPromise.then(() => {
       },
       {
         type: "line",
-        name: "\u666e\u9640\u533a",
+        name: "普陀区",
         connectNulls: false,
         symbolSize: 4,
         showSymbol: true,
@@ -5215,7 +5246,7 @@ newPromise.then(() => {
       },
       {
         type: "line",
-        name: "\u9752\u6d66\u533a",
+        name: "青浦区",
         connectNulls: false,
         symbolSize: 4,
         showSymbol: true,
@@ -5612,7 +5643,7 @@ newPromise.then(() => {
       },
       {
         type: "line",
-        name: "\u677e\u6c5f\u533a",
+        name: "松江区",
         connectNulls: false,
         symbolSize: 4,
         showSymbol: true,
@@ -6009,7 +6040,7 @@ newPromise.then(() => {
       },
       {
         type: "line",
-        name: "\u5916\u5730\u6765\u6caa",
+        name: "外地来沪",
         connectNulls: false,
         symbolSize: 4,
         showSymbol: true,
@@ -6406,7 +6437,7 @@ newPromise.then(() => {
       },
       {
         type: "line",
-        name: "\u672a\u77e5\u5730\u533a",
+        name: "未知地区",
         connectNulls: false,
         symbolSize: 4,
         showSymbol: true,
@@ -6803,7 +6834,7 @@ newPromise.then(() => {
       },
       {
         type: "line",
-        name: "\u5f90\u6c47\u533a",
+        name: "徐汇区",
         connectNulls: false,
         symbolSize: 4,
         showSymbol: true,
@@ -7200,7 +7231,7 @@ newPromise.then(() => {
       },
       {
         type: "line",
-        name: "\u6768\u6d66\u533a",
+        name: "杨浦区",
         connectNulls: false,
         symbolSize: 4,
         showSymbol: true,
@@ -7597,7 +7628,7 @@ newPromise.then(() => {
       },
       {
         type: "line",
-        name: "\u957f\u5b81\u533a",
+        name: "长宁区",
         connectNulls: false,
         symbolSize: 4,
         showSymbol: true,
@@ -7996,26 +8027,26 @@ newPromise.then(() => {
     legend: [
       {
         data: [
-          "\u5b9d\u5c71\u533a",
-          "\u5d07\u660e\u533a",
-          "\u5949\u8d24\u533a",
-          "\u8679\u53e3\u533a",
-          "\u9ec4\u6d66\u533a",
-          "\u5609\u5b9a\u533a",
-          "\u91d1\u5c71\u533a",
-          "\u5883\u5916\u6765\u6caa",
-          "\u5883\u5916\u8f93\u5165",
-          "\u9759\u5b89\u533a",
-          "\u95f5\u884c\u533a",
-          "\u6d66\u4e1c\u65b0\u533a",
-          "\u666e\u9640\u533a",
-          "\u9752\u6d66\u533a",
-          "\u677e\u6c5f\u533a",
-          "\u5916\u5730\u6765\u6caa",
-          "\u672a\u77e5\u5730\u533a",
-          "\u5f90\u6c47\u533a",
-          "\u6768\u6d66\u533a",
-          "\u957f\u5b81\u533a"
+          "宝山区",
+          "崇明区",
+          "奉贤区",
+          "虹口区",
+          "黄浦区",
+          "嘉定区",
+          "金山区",
+          "境外来沪",
+          "境外输入",
+          "静安区",
+          "闵行区",
+          "浦东新区",
+          "普陀区",
+          "青浦区",
+          "松江区",
+          "外地来沪",
+          "未知地区",
+          "徐汇区",
+          "杨浦区",
+          "长宁区"
         ],
         selected: {
           宝山区: true,
@@ -8070,12 +8101,12 @@ newPromise.then(() => {
       padding: 5
     },
     grid: {
-    left: "20%",
-    top: "20%",
-    right: "20%",
-    bottom: "30%",
-    containLabel: false  // 这个啥？看下面
-  },
+      left: "20%",
+      top: "20%",
+      right: "20%",
+      bottom: "30%",
+      containLabel: false  // 这个啥？看下面
+    },
     xAxis: [
       {
         type: "category",
@@ -8134,7 +8165,7 @@ newPromise.then(() => {
     title: [
       {
         text:
-          "\u4e0a\u6d77\u5e02\u75ab\u60c5\u786e\u8bca\u4eba\u6570\u53d8\u5316\u8d8b\u52bf",
+            "上海市疫情确诊人数变化趋势",
         left: "center",
         padding: 5,
         itemGap: 10,
@@ -8145,25 +8176,19 @@ newPromise.then(() => {
     ]
   };
   chart_a7e5c066973a4c67932ad46d9fcf8f62.setOption(
-    option_a7e5c066973a4c67932ad46d9fcf8f62
+      option_a7e5c066973a4c67932ad46d9fcf8f62
   );
 });
 
 export default {
-  name: "Page",
-  data() {
-    return {
-      // 图片路径
-      img: require("../assets/y.jpg")
-    };
-  }
+  name: "Page"
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-#map{
+#map {
   width: 1000px;
-  height: 1000px; 
+  height: 1000px;
 }
 </style>
