@@ -1,5 +1,7 @@
 <template>
-  <div id="map2" class="img"></div>
+  <div class="container">
+    <div id="map2" class="col-md-12"></div>
+  </div>
 </template>
 
 <script>
@@ -16,7 +18,7 @@ $(document).ready(()=>{
   var option_04819b4290b64c8d92f8f64ccb987d5a = {
     "animation": true,
     "animationThreshold": 2000,
-    "animationDuration": 1000,
+    "animationDuration": 5000,
     "animationEasing": "cubicOut",
     "animationDelay": 0,
     "animationDurationUpdate": 300,
@@ -4653,24 +4655,26 @@ $(document).ready(()=>{
       }
     ]
   };
-  chart_04819b4290b64c8d92f8f64ccb987d5a.setOption(option_04819b4290b64c8d92f8f64ccb987d5a);
+  let isSet = false;
+  $(document).on("scroll", function(){
+    if(!isSet && window.pageYOffset>=600){
+      isSet = true;
+      chart_04819b4290b64c8d92f8f64ccb987d5a.setOption(option_04819b4290b64c8d92f8f64ccb987d5a);
+    }
+  });
 });
 
 export default {
-  name: "Page",
-  data() {
-    return {
-      // 图片路径
-      img: require("../assets/y.jpg")
-    };
-  }
+  name: "Page"
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 #map2 {
-  width: 1000px;
+  position: center;
+  padding: 30px 0px;
+  width: 1400px;
   height: 1000px;
 }
 </style>

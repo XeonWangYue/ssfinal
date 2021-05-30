@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import top.xeonwang.model.DisctRetVO;
+import top.xeonwang.model.DisctSimpleRetVO;
 import top.xeonwang.service.BasicService;
 
 import java.time.LocalDate;
@@ -60,15 +60,14 @@ public class BasicController {
     @RequestMapping("/disct")
     public String getAllDisct(){
         log.info("getAllDisct");
-        List<DisctRetVO> temp = service.getAllDisct();
+        List<DisctSimpleRetVO> temp = service.getAllDisct();
         List<LocalDate> range = service.getDateRange();
-        Integer length = Math.toIntExact(range.get(0).until(range.get(1), ChronoUnit.DAYS))+1;
-        log.info(range.get(0)+" "+range.get(1)+" day: "+length);
-        List<List<DisctRetVO>> ret = new ArrayList<>();
+        Integer length = range.size();
+        List<List<DisctSimpleRetVO>> ret = new ArrayList<>();
         for(int i = 0;i<length;i++){
             ret.add(new ArrayList<>());
         }
-        for(DisctRetVO vo : temp){
+        for(DisctSimpleRetVO vo : temp){
             int index = Math.toIntExact(range.get(0).until(vo.getUpdateTime(), ChronoUnit.DAYS));
             ret.get(index).add(vo);
         }

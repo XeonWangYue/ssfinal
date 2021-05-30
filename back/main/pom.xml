@@ -36,6 +36,13 @@
             <artifactId>mariadb-java-client</artifactId>
             <version>2.7.2</version>
         </dependency>
+
+        <dependency>
+            <groupId>c3p0</groupId>
+            <artifactId>c3p0</artifactId>
+            <version>0.9.1.2</version>
+        </dependency>
+
         <!-- https://mvnrepository.com/artifact/com.alibaba/druid -->
         <dependency>
             <groupId>com.alibaba</groupId>
@@ -78,6 +85,7 @@
             <artifactId>fastjson</artifactId>
             <version>1.2.76</version>
         </dependency>
+
 
     </dependencies>
 </project>

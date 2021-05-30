@@ -3,7 +3,7 @@ server:
 spring:
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://localhost:3306/ssfinal
+    url: jdbc:mariadb://s5.z100.vip:38908/ssfinal
     username: ssfinal
     password: 123456
     acquireIncrement: 11

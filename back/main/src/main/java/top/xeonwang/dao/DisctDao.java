@@ -8,28 +8,25 @@ import top.xeonwang.model.Disct;
 import top.xeonwang.model.DisctExample;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 @Slf4j
 @Repository
 public class DisctDao {
     @Autowired
-    private DisctMapper mapper;
+    private DisctMapper disctMapper;
 
     public Disct getOne(){
-        return mapper.selectByPrimaryKey((long)5332);
+        return disctMapper.selectByPrimaryKey((long)5332);
     }
 
     public List<Disct> getOneDay(LocalDate date){
         DisctExample example = new DisctExample();
         DisctExample.Criteria criteria = example.createCriteria();
-        criteria.andUpdatetimeEqualTo(date);
+        criteria.andUpdateTimeEqualTo(date);
         List<Disct> ret;
         try {
-            ret = mapper.selectByExample(example);
+            ret = disctMapper.selectByExample(example);
             log.info("getOneDay: "+ ret.size());
         }
         catch (Exception e){
@@ -41,10 +38,10 @@ public class DisctDao {
     public List<Disct> getOneDisct(String disc){
         DisctExample example = new DisctExample();
         DisctExample.Criteria criteria = example.createCriteria();
-        criteria.andCitynameEqualTo(disc);
+        criteria.andCityNameEqualTo(disc);
         List<Disct> ret;
         try {
-            ret = mapper.selectByExample(example);
+            ret = disctMapper.selectByExample(example);
             log.info("getOneDisct "+disc+": "+ret.size());
         } catch(Exception e){
             ret = null;
@@ -52,7 +49,7 @@ public class DisctDao {
         ret.sort(new Comparator<Disct>() {
             @Override
             public int compare(Disct o1, Disct o2) {
-                if(o1.getUpdatetime().isAfter(o2.getUpdatetime())){
+                if(o1.getUpdateTime().isAfter(o2.getUpdateTime())){
                     return 1;
                 }
                 else{
@@ -61,7 +58,7 @@ public class DisctDao {
             }
         });
 
-        log.info(ret.get(0).getUpdatetime().toString()+" "+ret.get(1).getUpdatetime().toString());
+        log.info(ret.get(0).getUpdateTime().toString()+" "+ret.get(1).getUpdateTime().toString());
 
         return ret;
     }
@@ -69,13 +66,13 @@ public class DisctDao {
     public List<LocalDate> getDateRange(){
         DisctExample example = new DisctExample();
         DisctExample.Criteria criteria = example.createCriteria();
-        criteria.andUpdatetimeLessThanOrEqualTo(LocalDate.now());
+        criteria.andUpdateTimeLessThanOrEqualTo(LocalDate.now());
         example.setDistinct(true);
 
         List<Disct> temp;
-        List<LocalDate> dateList=new ArrayList<>();
+        Set<LocalDate> dataSet= new HashSet<>();
         try {
-            temp = mapper.selectByExample(example);
+            temp = disctMapper.selectByExample(example);
             log.info("getDateRange: "+temp.size());
         } catch(Exception e){
             temp = null;
@@ -85,11 +82,11 @@ public class DisctDao {
         }
         else{
             for(Disct disc : temp){
-                dateList.add(disc.getUpdatetime());
+                dataSet.add(disc.getUpdateTime());
             }
         }
-
-        dateList.sort(new Comparator<LocalDate>() {
+        ArrayList<LocalDate> ret = new ArrayList<LocalDate>(dataSet);
+        ret.sort(new Comparator<LocalDate>() {
             @Override
             public int compare(LocalDate o1, LocalDate o2) {
                 if(o1.isAfter(o2)){
@@ -100,24 +97,16 @@ public class DisctDao {
                 }
             }
         });
-        List<LocalDate> ret = new ArrayList<>();
-        log.info(dateList.get(0).toString()+" "+dateList.get(1).toString());
-
-        ret.add(dateList.get(0));
-        ret.add(dateList.get(dateList.size()-1));
-
-        log.info(ret.get(0).toString()+" "+ret.get(1).toString());
-
         return ret;
     }
 
     public List<Disct> getAllDisct(){
         DisctExample example = new DisctExample();
         DisctExample.Criteria criteria = example.createCriteria();
-        criteria.andUpdatetimeLessThanOrEqualTo(LocalDate.now());
+        criteria.andUpdateTimeLessThanOrEqualTo(LocalDate.now());
         List<Disct> ret;
         try {
-            ret = mapper.selectByExample(example);
+            ret = disctMapper.selectByExample(example);
             log.info("getAllDisct: "+ ret.size());
         } catch(Exception e){
             ret = null;

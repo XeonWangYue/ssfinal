@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import top.xeonwang.dao.DisctDao;
 import top.xeonwang.model.Disct;
-import top.xeonwang.model.DisctRetVO;
+import top.xeonwang.model.DisctSimpleRetVO;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -19,11 +19,11 @@ public class BasicService {
         return dao.getOne();
     }
 
-    public List<DisctRetVO> getOneDay(LocalDate date){
-        List<DisctRetVO> ret= new ArrayList<>();
+    public List<DisctSimpleRetVO> getOneDay(LocalDate date){
+        List<DisctSimpleRetVO> ret= new ArrayList<>();
         List<Disct>temp = dao.getOneDay(date);
         for( Disct po : temp){
-            ret.add(DisctRetVO.fromPO(po));
+            ret.add(DisctSimpleRetVO.fromPO(po));
         }
         return ret;
     }
@@ -32,20 +32,20 @@ public class BasicService {
         return dao.getDateRange();
     }
 
-    public List<DisctRetVO> getOneDisct(String disct){
-        List<DisctRetVO> ret= new ArrayList<>();
+    public List<DisctSimpleRetVO> getOneDisct(String disct){
+        List<DisctSimpleRetVO> ret= new ArrayList<>();
         List<Disct>temp = dao.getOneDisct(disct);
         for( Disct po : temp){
-            ret.add(DisctRetVO.fromPO(po));
+            ret.add(DisctSimpleRetVO.fromPO(po));
         }
         return ret;
     }
 
-    public List<DisctRetVO> getAllDisct(){
-        List<DisctRetVO> ret = new ArrayList<>();
+    public List<DisctSimpleRetVO> getAllDisct(){
+        List<DisctSimpleRetVO> ret = new ArrayList<>();
         List<Disct> temp= dao.getAllDisct();
         for( Disct po : temp){
-            ret.add(DisctRetVO.fromPO(po));
+            ret.add(DisctSimpleRetVO.fromPO(po));
         }
         return ret;
     }

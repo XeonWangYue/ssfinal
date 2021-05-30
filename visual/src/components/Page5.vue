@@ -1,16 +1,16 @@
 <template>
-  <div id="map"></div>
+  <div class="container">
+    <div id="map5" class="col-md-12"></div>
+  </div>
 </template>
 
 <script>
   let echarts = require('echarts');
   let $ = require('jquery');
   let odata = [];
-  let range = [];
   let pdata = new Array();
   let myChart;
   let option;
-  let nowdata;
 
   $.ajax({
     method: "get",
@@ -22,27 +22,29 @@
     }
   })
   let obj = JSON.parse(odata);
-  console.log(obj.length);
   for(let i = 0 ; i < obj.length ; i++){
     let day = obj[i];
-    let num = day.length;
     let oneday = new Array();
     for(let j = 0 ; j < day.length ; j++){
       oneday.push({"name":day[j].disctName, "value":day[j].currentCount});
-      if(day[j].currentCount>0){
-        console.log(i);
-      }
     }
     pdata.push(oneday);
   }
-  console.log(obj[5]);
 
   $(document).ready(()=>{
-    myChart = echarts.init(document.getElementById('map'));
+    myChart = echarts.init(document.getElementById('map5'));
     let geojson = require("../assets/shanghai.json");
     echarts.registerMap('shanghai', geojson);
     option = {
       baseOption:{
+        "animation": true,
+        "animationThreshold": 2000,
+        "animationDuration": 5000,
+        "animationEasing": "cubicOut",
+        "animationDelay": 0,
+        "animationDurationUpdate": 300,
+        "animationEasingUpdate": "cubicOut",
+        "animationDelayUpdate": 0,
         timeline: {
           axisType: 'category',
           inverse: false,
@@ -123,11 +125,11 @@
           },
           data: [],
           label: {
-            show: true,
-          },
-        }],
+            show: true
+          }
+        }]
       },
-      options: [],
+      options: []
     };
 
     for(let i = 0; i<pdata.length;i++){
@@ -142,19 +144,28 @@
           type: 'map',
           roam: false,
           map: 'shanghai',
-          data: pdata[i],
+          data: pdata[i]
         }
       })
     }
-    myChart.setOption(option);
+    let isSet = false;
+    $(document).on("scroll", function(){
+      if(!isSet && window.pageYOffset>=2400){
+        isSet = true;
+        myChart.setOption(option);
+      }
+    });
+
   })
   export default {
-    name: 'Map',
+    name: 'Map'
   }
 </script>
 <style>
-#map{
-  width: 800px;
+#map5{
+  position: center;
+  padding: 30px 0px;
+  width: 1400px;
   height: 1000px;
 }
 </style>

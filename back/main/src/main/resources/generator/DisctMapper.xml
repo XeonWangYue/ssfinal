@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="top.xeonwang.dao.DisctMapper">
+<mapper namespace="top.xeonwang.mapper.DisctMapper">
   <resultMap id="BaseResultMap" type="top.xeonwang.model.Disct">
     <id column="key" jdbcType="BIGINT" property="key" />
     <result column="city_name" jdbcType="VARCHAR" property="cityName" />
-    <result column="city_english_ame" jdbcType="VARCHAR" property="cityEnglishAme" />
+    <result column="city_english_name" jdbcType="VARCHAR" property="cityEnglishName" />
     <result column="city_zip_code" jdbcType="VARCHAR" property="cityZipCode" />
     <result column="city_confirmed_count" jdbcType="BIGINT" property="cityConfirmedCount" />
     <result column="city_suspected_count" jdbcType="BIGINT" property="citySuspectedCount" />
     <result column="city_cured_count" jdbcType="BIGINT" property="cityCuredCount" />
-    <result column="city_dead_ount" jdbcType="BIGINT" property="cityDeadOunt" />
+    <result column="city_dead_count" jdbcType="BIGINT" property="cityDeadCount" />
     <result column="update_time" jdbcType="DATE" property="updateTime" />
     <result column="city_currentconfirmed_count" jdbcType="BIGINT" property="cityCurrentconfirmedCount" />
-    <result column="increasedconfirmed_ount" jdbcType="BIGINT" property="increasedconfirmedOunt" />
+    <result column="increasedconfirmed_count" jdbcType="BIGINT" property="increasedconfirmedCount" />
     <result column="label" jdbcType="TINYINT" property="label" />
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -74,8 +74,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    `key`, city_name, city_english_ame, city_zip_code, city_confirmed_count, city_suspected_count, 
-    city_cured_count, city_dead_ount, update_time, city_currentconfirmed_count, increasedconfirmed_ount, 
+    `key`, city_name, city_english_name, city_zip_code, city_confirmed_count, city_suspected_count, 
+    city_cured_count, city_dead_count, update_time, city_currentconfirmed_count, increasedconfirmed_count, 
     `label`
   </sql>
   <select id="selectByExample" parameterType="top.xeonwang.model.DisctExample" resultMap="BaseResultMap">
@@ -84,7 +84,7 @@
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from ssfinal..disct
+    from ssfinal.disct
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -95,43 +95,43 @@
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from ssfinal..disct
+    from ssfinal.disct
     where `key` = #{key,jdbcType=BIGINT}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
-    delete from ssfinal..disct
+    delete from ssfinal.disct
     where `key` = #{key,jdbcType=BIGINT}
   </delete>
   <delete id="deleteByExample" parameterType="top.xeonwang.model.DisctExample">
-    delete from ssfinal..disct
+    delete from ssfinal.disct
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
   <insert id="insert" parameterType="top.xeonwang.model.Disct">
     <selectKey keyProperty="key" order="AFTER" resultType="java.lang.Long">
-      MariaDB
+      SELECT LAST_INSERT_ID()
     </selectKey>
-    insert into ssfinal..disct (city_name, city_english_ame, city_zip_code, 
+    insert into ssfinal.disct (city_name, city_english_name, city_zip_code, 
       city_confirmed_count, city_suspected_count, city_cured_count, 
-      city_dead_ount, update_time, city_currentconfirmed_count, 
-      increasedconfirmed_ount, `label`)
-    values (#{cityName,jdbcType=VARCHAR}, #{cityEnglishAme,jdbcType=VARCHAR}, #{cityZipCode,jdbcType=VARCHAR}, 
+      city_dead_count, update_time, city_currentconfirmed_count, 
+      increasedconfirmed_count, `label`)
+    values (#{cityName,jdbcType=VARCHAR}, #{cityEnglishName,jdbcType=VARCHAR}, #{cityZipCode,jdbcType=VARCHAR}, 
       #{cityConfirmedCount,jdbcType=BIGINT}, #{citySuspectedCount,jdbcType=BIGINT}, #{cityCuredCount,jdbcType=BIGINT}, 
-      #{cityDeadOunt,jdbcType=BIGINT}, #{updateTime,jdbcType=DATE}, #{cityCurrentconfirmedCount,jdbcType=BIGINT}, 
-      #{increasedconfirmedOunt,jdbcType=BIGINT}, #{label,jdbcType=TINYINT})
+      #{cityDeadCount,jdbcType=BIGINT}, #{updateTime,jdbcType=DATE}, #{cityCurrentconfirmedCount,jdbcType=BIGINT}, 
+      #{increasedconfirmedCount,jdbcType=BIGINT}, #{label,jdbcType=TINYINT})
   </insert>
   <insert id="insertSelective" parameterType="top.xeonwang.model.Disct">
     <selectKey keyProperty="key" order="AFTER" resultType="java.lang.Long">
-      MariaDB
+      SELECT LAST_INSERT_ID()
     </selectKey>
-    insert into ssfinal..disct
+    insert into ssfinal.disct
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="cityName != null">
         city_name,
       </if>
-      <if test="cityEnglishAme != null">
-        city_english_ame,
+      <if test="cityEnglishName != null">
+        city_english_name,
       </if>
       <if test="cityZipCode != null">
         city_zip_code,
@@ -145,8 +145,8 @@
       <if test="cityCuredCount != null">
         city_cured_count,
       </if>
-      <if test="cityDeadOunt != null">
-        city_dead_ount,
+      <if test="cityDeadCount != null">
+        city_dead_count,
       </if>
       <if test="updateTime != null">
         update_time,
@@ -154,8 +154,8 @@
       <if test="cityCurrentconfirmedCount != null">
         city_currentconfirmed_count,
       </if>
-      <if test="increasedconfirmedOunt != null">
-        increasedconfirmed_ount,
+      <if test="increasedconfirmedCount != null">
+        increasedconfirmed_count,
       </if>
       <if test="label != null">
         `label`,
@@ -165,8 +165,8 @@
       <if test="cityName != null">
         #{cityName,jdbcType=VARCHAR},
       </if>
-      <if test="cityEnglishAme != null">
-        #{cityEnglishAme,jdbcType=VARCHAR},
+      <if test="cityEnglishName != null">
+        #{cityEnglishName,jdbcType=VARCHAR},
       </if>
       <if test="cityZipCode != null">
         #{cityZipCode,jdbcType=VARCHAR},
@@ -180,8 +180,8 @@
       <if test="cityCuredCount != null">
         #{cityCuredCount,jdbcType=BIGINT},
       </if>
-      <if test="cityDeadOunt != null">
-        #{cityDeadOunt,jdbcType=BIGINT},
+      <if test="cityDeadCount != null">
+        #{cityDeadCount,jdbcType=BIGINT},
       </if>
       <if test="updateTime != null">
         #{updateTime,jdbcType=DATE},
@@ -189,8 +189,8 @@
       <if test="cityCurrentconfirmedCount != null">
         #{cityCurrentconfirmedCount,jdbcType=BIGINT},
       </if>
-      <if test="increasedconfirmedOunt != null">
-        #{increasedconfirmedOunt,jdbcType=BIGINT},
+      <if test="increasedconfirmedCount != null">
+        #{increasedconfirmedCount,jdbcType=BIGINT},
       </if>
       <if test="label != null">
         #{label,jdbcType=TINYINT},
@@ -198,13 +198,13 @@
     </trim>
   </insert>
   <select id="countByExample" parameterType="top.xeonwang.model.DisctExample" resultType="java.lang.Long">
-    select count(*) from ssfinal..disct
+    select count(*) from ssfinal.disct
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
-    update ssfinal..disct
+    update ssfinal.disct
     <set>
       <if test="record.key != null">
         `key` = #{record.key,jdbcType=BIGINT},
@@ -212,8 +212,8 @@
       <if test="record.cityName != null">
         city_name = #{record.cityName,jdbcType=VARCHAR},
       </if>
-      <if test="record.cityEnglishAme != null">
-        city_english_ame = #{record.cityEnglishAme,jdbcType=VARCHAR},
+      <if test="record.cityEnglishName != null">
+        city_english_name = #{record.cityEnglishName,jdbcType=VARCHAR},
       </if>
       <if test="record.cityZipCode != null">
         city_zip_code = #{record.cityZipCode,jdbcType=VARCHAR},
@@ -227,8 +227,8 @@
       <if test="record.cityCuredCount != null">
         city_cured_count = #{record.cityCuredCount,jdbcType=BIGINT},
       </if>
-      <if test="record.cityDeadOunt != null">
-        city_dead_ount = #{record.cityDeadOunt,jdbcType=BIGINT},
+      <if test="record.cityDeadCount != null">
+        city_dead_count = #{record.cityDeadCount,jdbcType=BIGINT},
       </if>
       <if test="record.updateTime != null">
         update_time = #{record.updateTime,jdbcType=DATE},
@@ -236,8 +236,8 @@
       <if test="record.cityCurrentconfirmedCount != null">
         city_currentconfirmed_count = #{record.cityCurrentconfirmedCount,jdbcType=BIGINT},
       </if>
-      <if test="record.increasedconfirmedOunt != null">
-        increasedconfirmed_ount = #{record.increasedconfirmedOunt,jdbcType=BIGINT},
+      <if test="record.increasedconfirmedCount != null">
+        increasedconfirmed_count = #{record.increasedconfirmedCount,jdbcType=BIGINT},
       </if>
       <if test="record.label != null">
         `label` = #{record.label,jdbcType=TINYINT},
@@ -248,31 +248,31 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
-    update ssfinal..disct
+    update ssfinal.disct
     set `key` = #{record.key,jdbcType=BIGINT},
       city_name = #{record.cityName,jdbcType=VARCHAR},
-      city_english_ame = #{record.cityEnglishAme,jdbcType=VARCHAR},
+      city_english_name = #{record.cityEnglishName,jdbcType=VARCHAR},
       city_zip_code = #{record.cityZipCode,jdbcType=VARCHAR},
       city_confirmed_count = #{record.cityConfirmedCount,jdbcType=BIGINT},
       city_suspected_count = #{record.citySuspectedCount,jdbcType=BIGINT},
       city_cured_count = #{record.cityCuredCount,jdbcType=BIGINT},
-      city_dead_ount = #{record.cityDeadOunt,jdbcType=BIGINT},
+      city_dead_count = #{record.cityDeadCount,jdbcType=BIGINT},
       update_time = #{record.updateTime,jdbcType=DATE},
       city_currentconfirmed_count = #{record.cityCurrentconfirmedCount,jdbcType=BIGINT},
-      increasedconfirmed_ount = #{record.increasedconfirmedOunt,jdbcType=BIGINT},
+      increasedconfirmed_count = #{record.increasedconfirmedCount,jdbcType=BIGINT},
       `label` = #{record.label,jdbcType=TINYINT}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
   <update id="updateByPrimaryKeySelective" parameterType="top.xeonwang.model.Disct">
-    update ssfinal..disct
+    update ssfinal.disct
     <set>
       <if test="cityName != null">
         city_name = #{cityName,jdbcType=VARCHAR},
       </if>
-      <if test="cityEnglishAme != null">
-        city_english_ame = #{cityEnglishAme,jdbcType=VARCHAR},
+      <if test="cityEnglishName != null">
+        city_english_name = #{cityEnglishName,jdbcType=VARCHAR},
       </if>
       <if test="cityZipCode != null">
         city_zip_code = #{cityZipCode,jdbcType=VARCHAR},
@@ -286,8 +286,8 @@
       <if test="cityCuredCount != null">
         city_cured_count = #{cityCuredCount,jdbcType=BIGINT},
       </if>
-      <if test="cityDeadOunt != null">
-        city_dead_ount = #{cityDeadOunt,jdbcType=BIGINT},
+      <if test="cityDeadCount != null">
+        city_dead_count = #{cityDeadCount,jdbcType=BIGINT},
       </if>
       <if test="updateTime != null">
         update_time = #{updateTime,jdbcType=DATE},
@@ -295,8 +295,8 @@
       <if test="cityCurrentconfirmedCount != null">
         city_currentconfirmed_count = #{cityCurrentconfirmedCount,jdbcType=BIGINT},
       </if>
-      <if test="increasedconfirmedOunt != null">
-        increasedconfirmed_ount = #{increasedconfirmedOunt,jdbcType=BIGINT},
+      <if test="increasedconfirmedCount != null">
+        increasedconfirmed_count = #{increasedconfirmedCount,jdbcType=BIGINT},
       </if>
       <if test="label != null">
         `label` = #{label,jdbcType=TINYINT},
@@ -305,17 +305,17 @@
     where `key` = #{key,jdbcType=BIGINT}
   </update>
   <update id="updateByPrimaryKey" parameterType="top.xeonwang.model.Disct">
-    update ssfinal..disct
+    update ssfinal.disct
     set city_name = #{cityName,jdbcType=VARCHAR},
-      city_english_ame = #{cityEnglishAme,jdbcType=VARCHAR},
+      city_english_name = #{cityEnglishName,jdbcType=VARCHAR},
       city_zip_code = #{cityZipCode,jdbcType=VARCHAR},
       city_confirmed_count = #{cityConfirmedCount,jdbcType=BIGINT},
       city_suspected_count = #{citySuspectedCount,jdbcType=BIGINT},
       city_cured_count = #{cityCuredCount,jdbcType=BIGINT},
-      city_dead_ount = #{cityDeadOunt,jdbcType=BIGINT},
+      city_dead_count = #{cityDeadCount,jdbcType=BIGINT},
       update_time = #{updateTime,jdbcType=DATE},
       city_currentconfirmed_count = #{cityCurrentconfirmedCount,jdbcType=BIGINT},
-      increasedconfirmed_ount = #{increasedconfirmedOunt,jdbcType=BIGINT},
+      increasedconfirmed_count = #{increasedconfirmedCount,jdbcType=BIGINT},
       `label` = #{label,jdbcType=TINYINT}
     where `key` = #{key,jdbcType=BIGINT}
   </update>

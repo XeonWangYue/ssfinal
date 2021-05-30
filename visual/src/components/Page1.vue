@@ -1,6 +1,6 @@
 <template>
-  <div id="map" class="img">
-
+  <div class="container">
+    <div id="map1" class="col-md-12"></div>
   </div>
 </template>
 
@@ -11,7 +11,7 @@ let newPromise = new Promise((resolve) => {
 })
 newPromise.then(() => {
   var chart_a7e5c066973a4c67932ad46d9fcf8f62 = echarts.init(
-      document.getElementById("map"),
+      document.getElementById("map1"),
       "white",
       {renderer: "canvas"}
   );
@@ -49,7 +49,7 @@ newPromise.then(() => {
   var option_a7e5c066973a4c67932ad46d9fcf8f62 = {
     animation: true,
     animationThreshold: 2000,
-    animationDuration: 1000,
+    animationDuration: 5000,
     animationEasing: "cubicOut",
     animationDelay: 0,
     animationDurationUpdate: 300,
@@ -8187,8 +8187,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-#map {
-  width: 1000px;
+#map1 {
+  position: center;
+  padding: 30px 0px;
+  width: 1400px;
   height: 1000px;
 }
 </style>

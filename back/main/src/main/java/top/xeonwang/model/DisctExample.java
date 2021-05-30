@@ -165,633 +165,633 @@ public class DisctExample {
             return (Criteria) this;
         }
 
-        public Criteria andCitynameIsNull() {
-            addCriterion("cityName is null");
+        public Criteria andCityNameIsNull() {
+            addCriterion("city_name is null");
             return (Criteria) this;
         }
 
-        public Criteria andCitynameIsNotNull() {
-            addCriterion("cityName is not null");
+        public Criteria andCityNameIsNotNull() {
+            addCriterion("city_name is not null");
             return (Criteria) this;
         }
 
-        public Criteria andCitynameEqualTo(String value) {
-            addCriterion("cityName =", value, "cityname");
+        public Criteria andCityNameEqualTo(String value) {
+            addCriterion("city_name =", value, "cityName");
             return (Criteria) this;
         }
 
-        public Criteria andCitynameNotEqualTo(String value) {
-            addCriterion("cityName <>", value, "cityname");
+        public Criteria andCityNameNotEqualTo(String value) {
+            addCriterion("city_name <>", value, "cityName");
             return (Criteria) this;
         }
 
-        public Criteria andCitynameGreaterThan(String value) {
-            addCriterion("cityName >", value, "cityname");
+        public Criteria andCityNameGreaterThan(String value) {
+            addCriterion("city_name >", value, "cityName");
             return (Criteria) this;
         }
 
-        public Criteria andCitynameGreaterThanOrEqualTo(String value) {
-            addCriterion("cityName >=", value, "cityname");
+        public Criteria andCityNameGreaterThanOrEqualTo(String value) {
+            addCriterion("city_name >=", value, "cityName");
             return (Criteria) this;
         }
 
-        public Criteria andCitynameLessThan(String value) {
-            addCriterion("cityName <", value, "cityname");
+        public Criteria andCityNameLessThan(String value) {
+            addCriterion("city_name <", value, "cityName");
             return (Criteria) this;
         }
 
-        public Criteria andCitynameLessThanOrEqualTo(String value) {
-            addCriterion("cityName <=", value, "cityname");
+        public Criteria andCityNameLessThanOrEqualTo(String value) {
+            addCriterion("city_name <=", value, "cityName");
             return (Criteria) this;
         }
 
-        public Criteria andCitynameLike(String value) {
-            addCriterion("cityName like", value, "cityname");
+        public Criteria andCityNameLike(String value) {
+            addCriterion("city_name like", value, "cityName");
             return (Criteria) this;
         }
 
-        public Criteria andCitynameNotLike(String value) {
-            addCriterion("cityName not like", value, "cityname");
+        public Criteria andCityNameNotLike(String value) {
+            addCriterion("city_name not like", value, "cityName");
             return (Criteria) this;
         }
 
-        public Criteria andCitynameIn(List<String> values) {
-            addCriterion("cityName in", values, "cityname");
+        public Criteria andCityNameIn(List<String> values) {
+            addCriterion("city_name in", values, "cityName");
             return (Criteria) this;
         }
 
-        public Criteria andCitynameNotIn(List<String> values) {
-            addCriterion("cityName not in", values, "cityname");
+        public Criteria andCityNameNotIn(List<String> values) {
+            addCriterion("city_name not in", values, "cityName");
             return (Criteria) this;
         }
 
-        public Criteria andCitynameBetween(String value1, String value2) {
-            addCriterion("cityName between", value1, value2, "cityname");
+        public Criteria andCityNameBetween(String value1, String value2) {
+            addCriterion("city_name between", value1, value2, "cityName");
             return (Criteria) this;
         }
 
-        public Criteria andCitynameNotBetween(String value1, String value2) {
-            addCriterion("cityName not between", value1, value2, "cityname");
+        public Criteria andCityNameNotBetween(String value1, String value2) {
+            addCriterion("city_name not between", value1, value2, "cityName");
             return (Criteria) this;
         }
 
-        public Criteria andCityenglishnameIsNull() {
-            addCriterion("cityEnglishName is null");
+        public Criteria andCityEnglishNameIsNull() {
+            addCriterion("city_english_name is null");
             return (Criteria) this;
         }
 
-        public Criteria andCityenglishnameIsNotNull() {
-            addCriterion("cityEnglishName is not null");
+        public Criteria andCityEnglishNameIsNotNull() {
+            addCriterion("city_english_name is not null");
             return (Criteria) this;
         }
 
-        public Criteria andCityenglishnameEqualTo(String value) {
-            addCriterion("cityEnglishName =", value, "cityenglishname");
+        public Criteria andCityEnglishNameEqualTo(String value) {
+            addCriterion("city_english_name =", value, "cityEnglishName");
             return (Criteria) this;
         }
 
-        public Criteria andCityenglishnameNotEqualTo(String value) {
-            addCriterion("cityEnglishName <>", value, "cityenglishname");
+        public Criteria andCityEnglishNameNotEqualTo(String value) {
+            addCriterion("city_english_name <>", value, "cityEnglishName");
             return (Criteria) this;
         }
 
-        public Criteria andCityenglishnameGreaterThan(String value) {
-            addCriterion("cityEnglishName >", value, "cityenglishname");
+        public Criteria andCityEnglishNameGreaterThan(String value) {
+            addCriterion("city_english_name >", value, "cityEnglishName");
             return (Criteria) this;
         }
 
-        public Criteria andCityenglishnameGreaterThanOrEqualTo(String value) {
-            addCriterion("cityEnglishName >=", value, "cityenglishname");
+        public Criteria andCityEnglishNameGreaterThanOrEqualTo(String value) {
+            addCriterion("city_english_name >=", value, "cityEnglishName");
             return (Criteria) this;
         }
 
-        public Criteria andCityenglishnameLessThan(String value) {
-            addCriterion("cityEnglishName <", value, "cityenglishname");
+        public Criteria andCityEnglishNameLessThan(String value) {
+            addCriterion("city_english_name <", value, "cityEnglishName");
             return (Criteria) this;
         }
 
-        public Criteria andCityenglishnameLessThanOrEqualTo(String value) {
-            addCriterion("cityEnglishName <=", value, "cityenglishname");
+        public Criteria andCityEnglishNameLessThanOrEqualTo(String value) {
+            addCriterion("city_english_name <=", value, "cityEnglishName");
             return (Criteria) this;
         }
 
-        public Criteria andCityenglishnameLike(String value) {
-            addCriterion("cityEnglishName like", value, "cityenglishname");
+        public Criteria andCityEnglishNameLike(String value) {
+            addCriterion("city_english_name like", value, "cityEnglishName");
             return (Criteria) this;
         }
 
-        public Criteria andCityenglishnameNotLike(String value) {
-            addCriterion("cityEnglishName not like", value, "cityenglishname");
+        public Criteria andCityEnglishNameNotLike(String value) {
+            addCriterion("city_english_name not like", value, "cityEnglishName");
             return (Criteria) this;
         }
 
-        public Criteria andCityenglishnameIn(List<String> values) {
-            addCriterion("cityEnglishName in", values, "cityenglishname");
+        public Criteria andCityEnglishNameIn(List<String> values) {
+            addCriterion("city_english_name in", values, "cityEnglishName");
             return (Criteria) this;
         }
 
-        public Criteria andCityenglishnameNotIn(List<String> values) {
-            addCriterion("cityEnglishName not in", values, "cityenglishname");
+        public Criteria andCityEnglishNameNotIn(List<String> values) {
+            addCriterion("city_english_name not in", values, "cityEnglishName");
             return (Criteria) this;
         }
 
-        public Criteria andCityenglishnameBetween(String value1, String value2) {
-            addCriterion("cityEnglishName between", value1, value2, "cityenglishname");
+        public Criteria andCityEnglishNameBetween(String value1, String value2) {
+            addCriterion("city_english_name between", value1, value2, "cityEnglishName");
             return (Criteria) this;
         }
 
-        public Criteria andCityenglishnameNotBetween(String value1, String value2) {
-            addCriterion("cityEnglishName not between", value1, value2, "cityenglishname");
+        public Criteria andCityEnglishNameNotBetween(String value1, String value2) {
+            addCriterion("city_english_name not between", value1, value2, "cityEnglishName");
             return (Criteria) this;
         }
 
-        public Criteria andCityZipcodeIsNull() {
-            addCriterion("city_zipCode is null");
+        public Criteria andCityZipCodeIsNull() {
+            addCriterion("city_zip_code is null");
             return (Criteria) this;
         }
 
-        public Criteria andCityZipcodeIsNotNull() {
-            addCriterion("city_zipCode is not null");
+        public Criteria andCityZipCodeIsNotNull() {
+            addCriterion("city_zip_code is not null");
             return (Criteria) this;
         }
 
-        public Criteria andCityZipcodeEqualTo(String value) {
-            addCriterion("city_zipCode =", value, "cityZipcode");
+        public Criteria andCityZipCodeEqualTo(String value) {
+            addCriterion("city_zip_code =", value, "cityZipCode");
             return (Criteria) this;
         }
 
-        public Criteria andCityZipcodeNotEqualTo(String value) {
-            addCriterion("city_zipCode <>", value, "cityZipcode");
+        public Criteria andCityZipCodeNotEqualTo(String value) {
+            addCriterion("city_zip_code <>", value, "cityZipCode");
             return (Criteria) this;
         }
 
-        public Criteria andCityZipcodeGreaterThan(String value) {
-            addCriterion("city_zipCode >", value, "cityZipcode");
+        public Criteria andCityZipCodeGreaterThan(String value) {
+            addCriterion("city_zip_code >", value, "cityZipCode");
             return (Criteria) this;
         }
 
-        public Criteria andCityZipcodeGreaterThanOrEqualTo(String value) {
-            addCriterion("city_zipCode >=", value, "cityZipcode");
+        public Criteria andCityZipCodeGreaterThanOrEqualTo(String value) {
+            addCriterion("city_zip_code >=", value, "cityZipCode");
             return (Criteria) this;
         }
 
-        public Criteria andCityZipcodeLessThan(String value) {
-            addCriterion("city_zipCode <", value, "cityZipcode");
+        public Criteria andCityZipCodeLessThan(String value) {
+            addCriterion("city_zip_code <", value, "cityZipCode");
             return (Criteria) this;
         }
 
-        public Criteria andCityZipcodeLessThanOrEqualTo(String value) {
-            addCriterion("city_zipCode <=", value, "cityZipcode");
+        public Criteria andCityZipCodeLessThanOrEqualTo(String value) {
+            addCriterion("city_zip_code <=", value, "cityZipCode");
             return (Criteria) this;
         }
 
-        public Criteria andCityZipcodeLike(String value) {
-            addCriterion("city_zipCode like", value, "cityZipcode");
+        public Criteria andCityZipCodeLike(String value) {
+            addCriterion("city_zip_code like", value, "cityZipCode");
             return (Criteria) this;
         }
 
-        public Criteria andCityZipcodeNotLike(String value) {
-            addCriterion("city_zipCode not like", value, "cityZipcode");
+        public Criteria andCityZipCodeNotLike(String value) {
+            addCriterion("city_zip_code not like", value, "cityZipCode");
             return (Criteria) this;
         }
 
-        public Criteria andCityZipcodeIn(List<String> values) {
-            addCriterion("city_zipCode in", values, "cityZipcode");
+        public Criteria andCityZipCodeIn(List<String> values) {
+            addCriterion("city_zip_code in", values, "cityZipCode");
             return (Criteria) this;
         }
 
-        public Criteria andCityZipcodeNotIn(List<String> values) {
-            addCriterion("city_zipCode not in", values, "cityZipcode");
+        public Criteria andCityZipCodeNotIn(List<String> values) {
+            addCriterion("city_zip_code not in", values, "cityZipCode");
             return (Criteria) this;
         }
 
-        public Criteria andCityZipcodeBetween(String value1, String value2) {
-            addCriterion("city_zipCode between", value1, value2, "cityZipcode");
+        public Criteria andCityZipCodeBetween(String value1, String value2) {
+            addCriterion("city_zip_code between", value1, value2, "cityZipCode");
             return (Criteria) this;
         }
 
-        public Criteria andCityZipcodeNotBetween(String value1, String value2) {
-            addCriterion("city_zipCode not between", value1, value2, "cityZipcode");
+        public Criteria andCityZipCodeNotBetween(String value1, String value2) {
+            addCriterion("city_zip_code not between", value1, value2, "cityZipCode");
             return (Criteria) this;
         }
 
-        public Criteria andCityConfirmedcountIsNull() {
-            addCriterion("city_confirmedCount is null");
+        public Criteria andCityConfirmedCountIsNull() {
+            addCriterion("city_confirmed_count is null");
             return (Criteria) this;
         }
 
-        public Criteria andCityConfirmedcountIsNotNull() {
-            addCriterion("city_confirmedCount is not null");
+        public Criteria andCityConfirmedCountIsNotNull() {
+            addCriterion("city_confirmed_count is not null");
             return (Criteria) this;
         }
 
-        public Criteria andCityConfirmedcountEqualTo(Long value) {
-            addCriterion("city_confirmedCount =", value, "cityConfirmedcount");
+        public Criteria andCityConfirmedCountEqualTo(Long value) {
+            addCriterion("city_confirmed_count =", value, "cityConfirmedCount");
             return (Criteria) this;
         }
 
-        public Criteria andCityConfirmedcountNotEqualTo(Long value) {
-            addCriterion("city_confirmedCount <>", value, "cityConfirmedcount");
+        public Criteria andCityConfirmedCountNotEqualTo(Long value) {
+            addCriterion("city_confirmed_count <>", value, "cityConfirmedCount");
             return (Criteria) this;
         }
 
-        public Criteria andCityConfirmedcountGreaterThan(Long value) {
-            addCriterion("city_confirmedCount >", value, "cityConfirmedcount");
+        public Criteria andCityConfirmedCountGreaterThan(Long value) {
+            addCriterion("city_confirmed_count >", value, "cityConfirmedCount");
             return (Criteria) this;
         }
 
-        public Criteria andCityConfirmedcountGreaterThanOrEqualTo(Long value) {
-            addCriterion("city_confirmedCount >=", value, "cityConfirmedcount");
+        public Criteria andCityConfirmedCountGreaterThanOrEqualTo(Long value) {
+            addCriterion("city_confirmed_count >=", value, "cityConfirmedCount");
             return (Criteria) this;
         }
 
-        public Criteria andCityConfirmedcountLessThan(Long value) {
-            addCriterion("city_confirmedCount <", value, "cityConfirmedcount");
+        public Criteria andCityConfirmedCountLessThan(Long value) {
+            addCriterion("city_confirmed_count <", value, "cityConfirmedCount");
             return (Criteria) this;
         }
 
-        public Criteria andCityConfirmedcountLessThanOrEqualTo(Long value) {
-            addCriterion("city_confirmedCount <=", value, "cityConfirmedcount");
+        public Criteria andCityConfirmedCountLessThanOrEqualTo(Long value) {
+            addCriterion("city_confirmed_count <=", value, "cityConfirmedCount");
             return (Criteria) this;
         }
 
-        public Criteria andCityConfirmedcountIn(List<Long> values) {
-            addCriterion("city_confirmedCount in", values, "cityConfirmedcount");
+        public Criteria andCityConfirmedCountIn(List<Long> values) {
+            addCriterion("city_confirmed_count in", values, "cityConfirmedCount");
             return (Criteria) this;
         }
 
-        public Criteria andCityConfirmedcountNotIn(List<Long> values) {
-            addCriterion("city_confirmedCount not in", values, "cityConfirmedcount");
+        public Criteria andCityConfirmedCountNotIn(List<Long> values) {
+            addCriterion("city_confirmed_count not in", values, "cityConfirmedCount");
             return (Criteria) this;
         }
 
-        public Criteria andCityConfirmedcountBetween(Long value1, Long value2) {
-            addCriterion("city_confirmedCount between", value1, value2, "cityConfirmedcount");
+        public Criteria andCityConfirmedCountBetween(Long value1, Long value2) {
+            addCriterion("city_confirmed_count between", value1, value2, "cityConfirmedCount");
             return (Criteria) this;
         }
 
-        public Criteria andCityConfirmedcountNotBetween(Long value1, Long value2) {
-            addCriterion("city_confirmedCount not between", value1, value2, "cityConfirmedcount");
+        public Criteria andCityConfirmedCountNotBetween(Long value1, Long value2) {
+            addCriterion("city_confirmed_count not between", value1, value2, "cityConfirmedCount");
             return (Criteria) this;
         }
 
-        public Criteria andCitySuspectedcountIsNull() {
-            addCriterion("city_suspectedCount is null");
+        public Criteria andCitySuspectedCountIsNull() {
+            addCriterion("city_suspected_count is null");
             return (Criteria) this;
         }
 
-        public Criteria andCitySuspectedcountIsNotNull() {
-            addCriterion("city_suspectedCount is not null");
+        public Criteria andCitySuspectedCountIsNotNull() {
+            addCriterion("city_suspected_count is not null");
             return (Criteria) this;
         }
 
-        public Criteria andCitySuspectedcountEqualTo(Long value) {
-            addCriterion("city_suspectedCount =", value, "citySuspectedcount");
+        public Criteria andCitySuspectedCountEqualTo(Long value) {
+            addCriterion("city_suspected_count =", value, "citySuspectedCount");
             return (Criteria) this;
         }
 
-        public Criteria andCitySuspectedcountNotEqualTo(Long value) {
-            addCriterion("city_suspectedCount <>", value, "citySuspectedcount");
+        public Criteria andCitySuspectedCountNotEqualTo(Long value) {
+            addCriterion("city_suspected_count <>", value, "citySuspectedCount");
             return (Criteria) this;
         }
 
-        public Criteria andCitySuspectedcountGreaterThan(Long value) {
-            addCriterion("city_suspectedCount >", value, "citySuspectedcount");
+        public Criteria andCitySuspectedCountGreaterThan(Long value) {
+            addCriterion("city_suspected_count >", value, "citySuspectedCount");
             return (Criteria) this;
         }
 
-        public Criteria andCitySuspectedcountGreaterThanOrEqualTo(Long value) {
-            addCriterion("city_suspectedCount >=", value, "citySuspectedcount");
+        public Criteria andCitySuspectedCountGreaterThanOrEqualTo(Long value) {
+            addCriterion("city_suspected_count >=", value, "citySuspectedCount");
             return (Criteria) this;
         }
 
-        public Criteria andCitySuspectedcountLessThan(Long value) {
-            addCriterion("city_suspectedCount <", value, "citySuspectedcount");
+        public Criteria andCitySuspectedCountLessThan(Long value) {
+            addCriterion("city_suspected_count <", value, "citySuspectedCount");
             return (Criteria) this;
         }
 
-        public Criteria andCitySuspectedcountLessThanOrEqualTo(Long value) {
-            addCriterion("city_suspectedCount <=", value, "citySuspectedcount");
+        public Criteria andCitySuspectedCountLessThanOrEqualTo(Long value) {
+            addCriterion("city_suspected_count <=", value, "citySuspectedCount");
             return (Criteria) this;
         }
 
-        public Criteria andCitySuspectedcountIn(List<Long> values) {
-            addCriterion("city_suspectedCount in", values, "citySuspectedcount");
+        public Criteria andCitySuspectedCountIn(List<Long> values) {
+            addCriterion("city_suspected_count in", values, "citySuspectedCount");
             return (Criteria) this;
         }
 
-        public Criteria andCitySuspectedcountNotIn(List<Long> values) {
-            addCriterion("city_suspectedCount not in", values, "citySuspectedcount");
+        public Criteria andCitySuspectedCountNotIn(List<Long> values) {
+            addCriterion("city_suspected_count not in", values, "citySuspectedCount");
             return (Criteria) this;
         }
 
-        public Criteria andCitySuspectedcountBetween(Long value1, Long value2) {
-            addCriterion("city_suspectedCount between", value1, value2, "citySuspectedcount");
+        public Criteria andCitySuspectedCountBetween(Long value1, Long value2) {
+            addCriterion("city_suspected_count between", value1, value2, "citySuspectedCount");
             return (Criteria) this;
         }
 
-        public Criteria andCitySuspectedcountNotBetween(Long value1, Long value2) {
-            addCriterion("city_suspectedCount not between", value1, value2, "citySuspectedcount");
+        public Criteria andCitySuspectedCountNotBetween(Long value1, Long value2) {
+            addCriterion("city_suspected_count not between", value1, value2, "citySuspectedCount");
             return (Criteria) this;
         }
 
-        public Criteria andCityCuredcountIsNull() {
-            addCriterion("city_curedCount is null");
+        public Criteria andCityCuredCountIsNull() {
+            addCriterion("city_cured_count is null");
             return (Criteria) this;
         }
 
-        public Criteria andCityCuredcountIsNotNull() {
-            addCriterion("city_curedCount is not null");
+        public Criteria andCityCuredCountIsNotNull() {
+            addCriterion("city_cured_count is not null");
             return (Criteria) this;
         }
 
-        public Criteria andCityCuredcountEqualTo(Long value) {
-            addCriterion("city_curedCount =", value, "cityCuredcount");
+        public Criteria andCityCuredCountEqualTo(Long value) {
+            addCriterion("city_cured_count =", value, "cityCuredCount");
             return (Criteria) this;
         }
 
-        public Criteria andCityCuredcountNotEqualTo(Long value) {
-            addCriterion("city_curedCount <>", value, "cityCuredcount");
+        public Criteria andCityCuredCountNotEqualTo(Long value) {
+            addCriterion("city_cured_count <>", value, "cityCuredCount");
             return (Criteria) this;
         }
 
-        public Criteria andCityCuredcountGreaterThan(Long value) {
-            addCriterion("city_curedCount >", value, "cityCuredcount");
+        public Criteria andCityCuredCountGreaterThan(Long value) {
+            addCriterion("city_cured_count >", value, "cityCuredCount");
             return (Criteria) this;
         }
 
-        public Criteria andCityCuredcountGreaterThanOrEqualTo(Long value) {
-            addCriterion("city_curedCount >=", value, "cityCuredcount");
+        public Criteria andCityCuredCountGreaterThanOrEqualTo(Long value) {
+            addCriterion("city_cured_count >=", value, "cityCuredCount");
             return (Criteria) this;
         }
 
-        public Criteria andCityCuredcountLessThan(Long value) {
-            addCriterion("city_curedCount <", value, "cityCuredcount");
+        public Criteria andCityCuredCountLessThan(Long value) {
+            addCriterion("city_cured_count <", value, "cityCuredCount");
             return (Criteria) this;
         }
 
-        public Criteria andCityCuredcountLessThanOrEqualTo(Long value) {
-            addCriterion("city_curedCount <=", value, "cityCuredcount");
+        public Criteria andCityCuredCountLessThanOrEqualTo(Long value) {
+            addCriterion("city_cured_count <=", value, "cityCuredCount");
             return (Criteria) this;
         }
 
-        public Criteria andCityCuredcountIn(List<Long> values) {
-            addCriterion("city_curedCount in", values, "cityCuredcount");
+        public Criteria andCityCuredCountIn(List<Long> values) {
+            addCriterion("city_cured_count in", values, "cityCuredCount");
             return (Criteria) this;
         }
 
-        public Criteria andCityCuredcountNotIn(List<Long> values) {
-            addCriterion("city_curedCount not in", values, "cityCuredcount");
+        public Criteria andCityCuredCountNotIn(List<Long> values) {
+            addCriterion("city_cured_count not in", values, "cityCuredCount");
             return (Criteria) this;
         }
 
-        public Criteria andCityCuredcountBetween(Long value1, Long value2) {
-            addCriterion("city_curedCount between", value1, value2, "cityCuredcount");
+        public Criteria andCityCuredCountBetween(Long value1, Long value2) {
+            addCriterion("city_cured_count between", value1, value2, "cityCuredCount");
             return (Criteria) this;
         }
 
-        public Criteria andCityCuredcountNotBetween(Long value1, Long value2) {
-            addCriterion("city_curedCount not between", value1, value2, "cityCuredcount");
+        public Criteria andCityCuredCountNotBetween(Long value1, Long value2) {
+            addCriterion("city_cured_count not between", value1, value2, "cityCuredCount");
             return (Criteria) this;
         }
 
-        public Criteria andCityDeadcountIsNull() {
-            addCriterion("city_deadCount is null");
+        public Criteria andCityDeadCountIsNull() {
+            addCriterion("city_dead_count is null");
             return (Criteria) this;
         }
 
-        public Criteria andCityDeadcountIsNotNull() {
-            addCriterion("city_deadCount is not null");
+        public Criteria andCityDeadCountIsNotNull() {
+            addCriterion("city_dead_count is not null");
             return (Criteria) this;
         }
 
-        public Criteria andCityDeadcountEqualTo(Long value) {
-            addCriterion("city_deadCount =", value, "cityDeadcount");
+        public Criteria andCityDeadCountEqualTo(Long value) {
+            addCriterion("city_dead_count =", value, "cityDeadCount");
             return (Criteria) this;
         }
 
-        public Criteria andCityDeadcountNotEqualTo(Long value) {
-            addCriterion("city_deadCount <>", value, "cityDeadcount");
+        public Criteria andCityDeadCountNotEqualTo(Long value) {
+            addCriterion("city_dead_count <>", value, "cityDeadCount");
             return (Criteria) this;
         }
 
-        public Criteria andCityDeadcountGreaterThan(Long value) {
-            addCriterion("city_deadCount >", value, "cityDeadcount");
+        public Criteria andCityDeadCountGreaterThan(Long value) {
+            addCriterion("city_dead_count >", value, "cityDeadCount");
             return (Criteria) this;
         }
 
-        public Criteria andCityDeadcountGreaterThanOrEqualTo(Long value) {
-            addCriterion("city_deadCount >=", value, "cityDeadcount");
+        public Criteria andCityDeadCountGreaterThanOrEqualTo(Long value) {
+            addCriterion("city_dead_count >=", value, "cityDeadCount");
             return (Criteria) this;
         }
 
-        public Criteria andCityDeadcountLessThan(Long value) {
-            addCriterion("city_deadCount <", value, "cityDeadcount");
+        public Criteria andCityDeadCountLessThan(Long value) {
+            addCriterion("city_dead_count <", value, "cityDeadCount");
             return (Criteria) this;
         }
 
-        public Criteria andCityDeadcountLessThanOrEqualTo(Long value) {
-            addCriterion("city_deadCount <=", value, "cityDeadcount");
+        public Criteria andCityDeadCountLessThanOrEqualTo(Long value) {
+            addCriterion("city_dead_count <=", value, "cityDeadCount");
             return (Criteria) this;
         }
 
-        public Criteria andCityDeadcountIn(List<Long> values) {
-            addCriterion("city_deadCount in", values, "cityDeadcount");
+        public Criteria andCityDeadCountIn(List<Long> values) {
+            addCriterion("city_dead_count in", values, "cityDeadCount");
             return (Criteria) this;
         }
 
-        public Criteria andCityDeadcountNotIn(List<Long> values) {
-            addCriterion("city_deadCount not in", values, "cityDeadcount");
+        public Criteria andCityDeadCountNotIn(List<Long> values) {
+            addCriterion("city_dead_count not in", values, "cityDeadCount");
             return (Criteria) this;
         }
 
-        public Criteria andCityDeadcountBetween(Long value1, Long value2) {
-            addCriterion("city_deadCount between", value1, value2, "cityDeadcount");
+        public Criteria andCityDeadCountBetween(Long value1, Long value2) {
+            addCriterion("city_dead_count between", value1, value2, "cityDeadCount");
             return (Criteria) this;
         }
 
-        public Criteria andCityDeadcountNotBetween(Long value1, Long value2) {
-            addCriterion("city_deadCount not between", value1, value2, "cityDeadcount");
+        public Criteria andCityDeadCountNotBetween(Long value1, Long value2) {
+            addCriterion("city_dead_count not between", value1, value2, "cityDeadCount");
             return (Criteria) this;
         }
 
-        public Criteria andUpdatetimeIsNull() {
-            addCriterion("updateTime is null");
+        public Criteria andUpdateTimeIsNull() {
+            addCriterion("update_time is null");
             return (Criteria) this;
         }
 
-        public Criteria andUpdatetimeIsNotNull() {
-            addCriterion("updateTime is not null");
+        public Criteria andUpdateTimeIsNotNull() {
+            addCriterion("update_time is not null");
             return (Criteria) this;
         }
 
-        public Criteria andUpdatetimeEqualTo(LocalDate value) {
-            addCriterion("updateTime =", value, "updatetime");
+        public Criteria andUpdateTimeEqualTo(LocalDate value) {
+            addCriterion("update_time =", value, "updateTime");
             return (Criteria) this;
         }
 
-        public Criteria andUpdatetimeNotEqualTo(LocalDate value) {
-            addCriterion("updateTime <>", value, "updatetime");
+        public Criteria andUpdateTimeNotEqualTo(LocalDate value) {
+            addCriterion("update_time <>", value, "updateTime");
             return (Criteria) this;
         }
 
-        public Criteria andUpdatetimeGreaterThan(LocalDate value) {
-            addCriterion("updateTime >", value, "updatetime");
+        public Criteria andUpdateTimeGreaterThan(LocalDate value) {
+            addCriterion("update_time >", value, "updateTime");
             return (Criteria) this;
         }
 
-        public Criteria andUpdatetimeGreaterThanOrEqualTo(LocalDate value) {
-            addCriterion("updateTime >=", value, "updatetime");
+        public Criteria andUpdateTimeGreaterThanOrEqualTo(LocalDate value) {
+            addCriterion("update_time >=", value, "updateTime");
             return (Criteria) this;
         }
 
-        public Criteria andUpdatetimeLessThan(LocalDate value) {
-            addCriterion("updateTime <", value, "updatetime");
+        public Criteria andUpdateTimeLessThan(LocalDate value) {
+            addCriterion("update_time <", value, "updateTime");
             return (Criteria) this;
         }
 
-        public Criteria andUpdatetimeLessThanOrEqualTo(LocalDate value) {
-            addCriterion("updateTime <=", value, "updatetime");
+        public Criteria andUpdateTimeLessThanOrEqualTo(LocalDate value) {
+            addCriterion("update_time <=", value, "updateTime");
             return (Criteria) this;
         }
 
-        public Criteria andUpdatetimeIn(List<LocalDate> values) {
-            addCriterion("updateTime in", values, "updatetime");
+        public Criteria andUpdateTimeIn(List<LocalDate> values) {
+            addCriterion("update_time in", values, "updateTime");
             return (Criteria) this;
         }
 
-        public Criteria andUpdatetimeNotIn(List<LocalDate> values) {
-            addCriterion("updateTime not in", values, "updatetime");
+        public Criteria andUpdateTimeNotIn(List<LocalDate> values) {
+            addCriterion("update_time not in", values, "updateTime");
             return (Criteria) this;
         }
 
-        public Criteria andUpdatetimeBetween(LocalDate value1, LocalDate value2) {
-            addCriterion("updateTime between", value1, value2, "updatetime");
+        public Criteria andUpdateTimeBetween(LocalDate value1, LocalDate value2) {
+            addCriterion("update_time between", value1, value2, "updateTime");
             return (Criteria) this;
         }
 
-        public Criteria andUpdatetimeNotBetween(LocalDate value1, LocalDate value2) {
-            addCriterion("updateTime not between", value1, value2, "updatetime");
+        public Criteria andUpdateTimeNotBetween(LocalDate value1, LocalDate value2) {
+            addCriterion("update_time not between", value1, value2, "updateTime");
             return (Criteria) this;
         }
 
-        public Criteria andCityCurrentconfirmedcountIsNull() {
-            addCriterion("city_currentconfirmedCount is null");
+        public Criteria andCityCurrentconfirmedCountIsNull() {
+            addCriterion("city_currentconfirmed_count is null");
             return (Criteria) this;
         }
 
-        public Criteria andCityCurrentconfirmedcountIsNotNull() {
-            addCriterion("city_currentconfirmedCount is not null");
+        public Criteria andCityCurrentconfirmedCountIsNotNull() {
+            addCriterion("city_currentconfirmed_count is not null");
             return (Criteria) this;
         }
 
-        public Criteria andCityCurrentconfirmedcountEqualTo(Long value) {
-            addCriterion("city_currentconfirmedCount =", value, "cityCurrentconfirmedcount");
+        public Criteria andCityCurrentconfirmedCountEqualTo(Long value) {
+            addCriterion("city_currentconfirmed_count =", value, "cityCurrentconfirmedCount");
             return (Criteria) this;
         }
 
-        public Criteria andCityCurrentconfirmedcountNotEqualTo(Long value) {
-            addCriterion("city_currentconfirmedCount <>", value, "cityCurrentconfirmedcount");
+        public Criteria andCityCurrentconfirmedCountNotEqualTo(Long value) {
+            addCriterion("city_currentconfirmed_count <>", value, "cityCurrentconfirmedCount");
             return (Criteria) this;
         }
 
-        public Criteria andCityCurrentconfirmedcountGreaterThan(Long value) {
-            addCriterion("city_currentconfirmedCount >", value, "cityCurrentconfirmedcount");
+        public Criteria andCityCurrentconfirmedCountGreaterThan(Long value) {
+            addCriterion("city_currentconfirmed_count >", value, "cityCurrentconfirmedCount");
             return (Criteria) this;
         }
 
-        public Criteria andCityCurrentconfirmedcountGreaterThanOrEqualTo(Long value) {
-            addCriterion("city_currentconfirmedCount >=", value, "cityCurrentconfirmedcount");
+        public Criteria andCityCurrentconfirmedCountGreaterThanOrEqualTo(Long value) {
+            addCriterion("city_currentconfirmed_count >=", value, "cityCurrentconfirmedCount");
             return (Criteria) this;
         }
 
-        public Criteria andCityCurrentconfirmedcountLessThan(Long value) {
-            addCriterion("city_currentconfirmedCount <", value, "cityCurrentconfirmedcount");
+        public Criteria andCityCurrentconfirmedCountLessThan(Long value) {
+            addCriterion("city_currentconfirmed_count <", value, "cityCurrentconfirmedCount");
             return (Criteria) this;
         }
 
-        public Criteria andCityCurrentconfirmedcountLessThanOrEqualTo(Long value) {
-            addCriterion("city_currentconfirmedCount <=", value, "cityCurrentconfirmedcount");
+        public Criteria andCityCurrentconfirmedCountLessThanOrEqualTo(Long value) {
+            addCriterion("city_currentconfirmed_count <=", value, "cityCurrentconfirmedCount");
             return (Criteria) this;
         }
 
-        public Criteria andCityCurrentconfirmedcountIn(List<Long> values) {
-            addCriterion("city_currentconfirmedCount in", values, "cityCurrentconfirmedcount");
+        public Criteria andCityCurrentconfirmedCountIn(List<Long> values) {
+            addCriterion("city_currentconfirmed_count in", values, "cityCurrentconfirmedCount");
             return (Criteria) this;
         }
 
-        public Criteria andCityCurrentconfirmedcountNotIn(List<Long> values) {
-            addCriterion("city_currentconfirmedCount not in", values, "cityCurrentconfirmedcount");
+        public Criteria andCityCurrentconfirmedCountNotIn(List<Long> values) {
+            addCriterion("city_currentconfirmed_count not in", values, "cityCurrentconfirmedCount");
             return (Criteria) this;
         }
 
-        public Criteria andCityCurrentconfirmedcountBetween(Long value1, Long value2) {
-            addCriterion("city_currentconfirmedCount between", value1, value2, "cityCurrentconfirmedcount");
+        public Criteria andCityCurrentconfirmedCountBetween(Long value1, Long value2) {
+            addCriterion("city_currentconfirmed_count between", value1, value2, "cityCurrentconfirmedCount");
             return (Criteria) this;
         }
 
-        public Criteria andCityCurrentconfirmedcountNotBetween(Long value1, Long value2) {
-            addCriterion("city_currentconfirmedCount not between", value1, value2, "cityCurrentconfirmedcount");
+        public Criteria andCityCurrentconfirmedCountNotBetween(Long value1, Long value2) {
+            addCriterion("city_currentconfirmed_count not between", value1, value2, "cityCurrentconfirmedCount");
             return (Criteria) this;
         }
 
-        public Criteria andIncreasedconfirmedcountIsNull() {
-            addCriterion("increasedconfirmedCount is null");
+        public Criteria andIncreasedconfirmedCountIsNull() {
+            addCriterion("increasedconfirmed_count is null");
             return (Criteria) this;
         }
 
-        public Criteria andIncreasedconfirmedcountIsNotNull() {
-            addCriterion("increasedconfirmedCount is not null");
+        public Criteria andIncreasedconfirmedCountIsNotNull() {
+            addCriterion("increasedconfirmed_count is not null");
             return (Criteria) this;
         }
 
-        public Criteria andIncreasedconfirmedcountEqualTo(Long value) {
-            addCriterion("increasedconfirmedCount =", value, "increasedconfirmedcount");
+        public Criteria andIncreasedconfirmedCountEqualTo(Long value) {
+            addCriterion("increasedconfirmed_count =", value, "increasedconfirmedCount");
             return (Criteria) this;
         }
 
-        public Criteria andIncreasedconfirmedcountNotEqualTo(Long value) {
-            addCriterion("increasedconfirmedCount <>", value, "increasedconfirmedcount");
+        public Criteria andIncreasedconfirmedCountNotEqualTo(Long value) {
+            addCriterion("increasedconfirmed_count <>", value, "increasedconfirmedCount");
             return (Criteria) this;
         }
 
-        public Criteria andIncreasedconfirmedcountGreaterThan(Long value) {
-            addCriterion("increasedconfirmedCount >", value, "increasedconfirmedcount");
+        public Criteria andIncreasedconfirmedCountGreaterThan(Long value) {
+            addCriterion("increasedconfirmed_count >", value, "increasedconfirmedCount");
             return (Criteria) this;
         }
 
-        public Criteria andIncreasedconfirmedcountGreaterThanOrEqualTo(Long value) {
-            addCriterion("increasedconfirmedCount >=", value, "increasedconfirmedcount");
+        public Criteria andIncreasedconfirmedCountGreaterThanOrEqualTo(Long value) {
+            addCriterion("increasedconfirmed_count >=", value, "increasedconfirmedCount");
             return (Criteria) this;
         }
 
-        public Criteria andIncreasedconfirmedcountLessThan(Long value) {
-            addCriterion("increasedconfirmedCount <", value, "increasedconfirmedcount");
+        public Criteria andIncreasedconfirmedCountLessThan(Long value) {
+            addCriterion("increasedconfirmed_count <", value, "increasedconfirmedCount");
             return (Criteria) this;
         }
 
-        public Criteria andIncreasedconfirmedcountLessThanOrEqualTo(Long value) {
-            addCriterion("increasedconfirmedCount <=", value, "increasedconfirmedcount");
+        public Criteria andIncreasedconfirmedCountLessThanOrEqualTo(Long value) {
+            addCriterion("increasedconfirmed_count <=", value, "increasedconfirmedCount");
             return (Criteria) this;
         }
 
-        public Criteria andIncreasedconfirmedcountIn(List<Long> values) {
-            addCriterion("increasedconfirmedCount in", values, "increasedconfirmedcount");
+        public Criteria andIncreasedconfirmedCountIn(List<Long> values) {
+            addCriterion("increasedconfirmed_count in", values, "increasedconfirmedCount");
             return (Criteria) this;
         }
 
-        public Criteria andIncreasedconfirmedcountNotIn(List<Long> values) {
-            addCriterion("increasedconfirmedCount not in", values, "increasedconfirmedcount");
+        public Criteria andIncreasedconfirmedCountNotIn(List<Long> values) {
+            addCriterion("increasedconfirmed_count not in", values, "increasedconfirmedCount");
             return (Criteria) this;
         }
 
-        public Criteria andIncreasedconfirmedcountBetween(Long value1, Long value2) {
-            addCriterion("increasedconfirmedCount between", value1, value2, "increasedconfirmedcount");
+        public Criteria andIncreasedconfirmedCountBetween(Long value1, Long value2) {
+            addCriterion("increasedconfirmed_count between", value1, value2, "increasedconfirmedCount");
             return (Criteria) this;
         }
 
-        public Criteria andIncreasedconfirmedcountNotBetween(Long value1, Long value2) {
-            addCriterion("increasedconfirmedCount not between", value1, value2, "increasedconfirmedcount");
+        public Criteria andIncreasedconfirmedCountNotBetween(Long value1, Long value2) {
+            addCriterion("increasedconfirmed_count not between", value1, value2, "increasedconfirmedCount");
             return (Criteria) this;
         }
 

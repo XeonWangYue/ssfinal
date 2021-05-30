@@ -10,25 +10,25 @@ import java.time.LocalDate;
 public class Disct implements Serializable {
     private Long key;
 
-    private String cityname;
+    private String cityName;
 
-    private String cityenglishname;
+    private String cityEnglishName;
 
-    private String cityZipcode;
+    private String cityZipCode;
 
-    private Long cityConfirmedcount;
+    private Long cityConfirmedCount;
 
-    private Long citySuspectedcount;
+    private Long citySuspectedCount;
 
-    private Long cityCuredcount;
+    private Long cityCuredCount;
 
-    private Long cityDeadcount;
+    private Long cityDeadCount;
 
-    private LocalDate updatetime;
+    private LocalDate updateTime;
 
-    private Long cityCurrentconfirmedcount;
+    private Long cityCurrentconfirmedCount;
 
-    private Long increasedconfirmedcount;
+    private Long increasedconfirmedCount;
 
     private Byte label;
 
@@ -42,84 +42,84 @@ public class Disct implements Serializable {
         this.key = key;
     }
 
-    public String getCityname() {
-        return cityname;
+    public String getCityName() {
+        return cityName;
     }
 
-    public void setCityname(String cityname) {
-        this.cityname = cityname;
+    public void setCityName(String cityName) {
+        this.cityName = cityName;
     }
 
-    public String getCityenglishname() {
-        return cityenglishname;
+    public String getCityEnglishName() {
+        return cityEnglishName;
     }
 
-    public void setCityenglishname(String cityenglishname) {
-        this.cityenglishname = cityenglishname;
+    public void setCityEnglishName(String cityEnglishName) {
+        this.cityEnglishName = cityEnglishName;
     }
 
-    public String getCityZipcode() {
-        return cityZipcode;
+    public String getCityZipCode() {
+        return cityZipCode;
     }
 
-    public void setCityZipcode(String cityZipcode) {
-        this.cityZipcode = cityZipcode;
+    public void setCityZipCode(String cityZipCode) {
+        this.cityZipCode = cityZipCode;
     }
 
-    public Long getCityConfirmedcount() {
-        return cityConfirmedcount;
+    public Long getCityConfirmedCount() {
+        return cityConfirmedCount;
     }
 
-    public void setCityConfirmedcount(Long cityConfirmedcount) {
-        this.cityConfirmedcount = cityConfirmedcount;
+    public void setCityConfirmedCount(Long cityConfirmedCount) {
+        this.cityConfirmedCount = cityConfirmedCount;
     }
 
-    public Long getCitySuspectedcount() {
-        return citySuspectedcount;
+    public Long getCitySuspectedCount() {
+        return citySuspectedCount;
     }
 
-    public void setCitySuspectedcount(Long citySuspectedcount) {
-        this.citySuspectedcount = citySuspectedcount;
+    public void setCitySuspectedCount(Long citySuspectedCount) {
+        this.citySuspectedCount = citySuspectedCount;
     }
 
-    public Long getCityCuredcount() {
-        return cityCuredcount;
+    public Long getCityCuredCount() {
+        return cityCuredCount;
     }
 
-    public void setCityCuredcount(Long cityCuredcount) {
-        this.cityCuredcount = cityCuredcount;
+    public void setCityCuredCount(Long cityCuredCount) {
+        this.cityCuredCount = cityCuredCount;
     }
 
-    public Long getCityDeadcount() {
-        return cityDeadcount;
+    public Long getCityDeadCount() {
+        return cityDeadCount;
     }
 
-    public void setCityDeadcount(Long cityDeadcount) {
-        this.cityDeadcount = cityDeadcount;
+    public void setCityDeadCount(Long cityDeadCount) {
+        this.cityDeadCount = cityDeadCount;
     }
 
-    public LocalDate getUpdatetime() {
-        return updatetime;
+    public LocalDate getUpdateTime() {
+        return updateTime;
     }
 
-    public void setUpdatetime(LocalDate updatetime) {
-        this.updatetime = updatetime;
+    public void setUpdateTime(LocalDate updateTime) {
+        this.updateTime = updateTime;
     }
 
-    public Long getCityCurrentconfirmedcount() {
-        return cityCurrentconfirmedcount;
+    public Long getCityCurrentconfirmedCount() {
+        return cityCurrentconfirmedCount;
     }
 
-    public void setCityCurrentconfirmedcount(Long cityCurrentconfirmedcount) {
-        this.cityCurrentconfirmedcount = cityCurrentconfirmedcount;
+    public void setCityCurrentconfirmedCount(Long cityCurrentconfirmedCount) {
+        this.cityCurrentconfirmedCount = cityCurrentconfirmedCount;
     }
 
-    public Long getIncreasedconfirmedcount() {
-        return increasedconfirmedcount;
+    public Long getIncreasedconfirmedCount() {
+        return increasedconfirmedCount;
     }
 
-    public void setIncreasedconfirmedcount(Long increasedconfirmedcount) {
-        this.increasedconfirmedcount = increasedconfirmedcount;
+    public void setIncreasedconfirmedCount(Long increasedconfirmedCount) {
+        this.increasedconfirmedCount = increasedconfirmedCount;
     }
 
     public Byte getLabel() {
@@ -143,16 +143,16 @@ public class Disct implements Serializable {
         }
         Disct other = (Disct) that;
         return (this.getKey() == null ? other.getKey() == null : this.getKey().equals(other.getKey()))
-            && (this.getCityname() == null ? other.getCityname() == null : this.getCityname().equals(other.getCityname()))
-            && (this.getCityenglishname() == null ? other.getCityenglishname() == null : this.getCityenglishname().equals(other.getCityenglishname()))
-            && (this.getCityZipcode() == null ? other.getCityZipcode() == null : this.getCityZipcode().equals(other.getCityZipcode()))
-            && (this.getCityConfirmedcount() == null ? other.getCityConfirmedcount() == null : this.getCityConfirmedcount().equals(other.getCityConfirmedcount()))
-            && (this.getCitySuspectedcount() == null ? other.getCitySuspectedcount() == null : this.getCitySuspectedcount().equals(other.getCitySuspectedcount()))
-            && (this.getCityCuredcount() == null ? other.getCityCuredcount() == null : this.getCityCuredcount().equals(other.getCityCuredcount()))
-            && (this.getCityDeadcount() == null ? other.getCityDeadcount() == null : this.getCityDeadcount().equals(other.getCityDeadcount()))
-            && (this.getUpdatetime() == null ? other.getUpdatetime() == null : this.getUpdatetime().equals(other.getUpdatetime()))
-            && (this.getCityCurrentconfirmedcount() == null ? other.getCityCurrentconfirmedcount() == null : this.getCityCurrentconfirmedcount().equals(other.getCityCurrentconfirmedcount()))
-            && (this.getIncreasedconfirmedcount() == null ? other.getIncreasedconfirmedcount() == null : this.getIncreasedconfirmedcount().equals(other.getIncreasedconfirmedcount()))
+            && (this.getCityName() == null ? other.getCityName() == null : this.getCityName().equals(other.getCityName()))
+            && (this.getCityEnglishName() == null ? other.getCityEnglishName() == null : this.getCityEnglishName().equals(other.getCityEnglishName()))
+            && (this.getCityZipCode() == null ? other.getCityZipCode() == null : this.getCityZipCode().equals(other.getCityZipCode()))
+            && (this.getCityConfirmedCount() == null ? other.getCityConfirmedCount() == null : this.getCityConfirmedCount().equals(other.getCityConfirmedCount()))
+            && (this.getCitySuspectedCount() == null ? other.getCitySuspectedCount() == null : this.getCitySuspectedCount().equals(other.getCitySuspectedCount()))
+            && (this.getCityCuredCount() == null ? other.getCityCuredCount() == null : this.getCityCuredCount().equals(other.getCityCuredCount()))
+            && (this.getCityDeadCount() == null ? other.getCityDeadCount() == null : this.getCityDeadCount().equals(other.getCityDeadCount()))
+            && (this.getUpdateTime() == null ? other.getUpdateTime() == null : this.getUpdateTime().equals(other.getUpdateTime()))
+            && (this.getCityCurrentconfirmedCount() == null ? other.getCityCurrentconfirmedCount() == null : this.getCityCurrentconfirmedCount().equals(other.getCityCurrentconfirmedCount()))
+            && (this.getIncreasedconfirmedCount() == null ? other.getIncreasedconfirmedCount() == null : this.getIncreasedconfirmedCount().equals(other.getIncreasedconfirmedCount()))
             && (this.getLabel() == null ? other.getLabel() == null : this.getLabel().equals(other.getLabel()));
     }
 
@@ -161,16 +161,16 @@ public class Disct implements Serializable {
         final int prime = 31;
         int result = 1;
         result = prime * result + ((getKey() == null) ? 0 : getKey().hashCode());
-        result = prime * result + ((getCityname() == null) ? 0 : getCityname().hashCode());
-        result = prime * result + ((getCityenglishname() == null) ? 0 : getCityenglishname().hashCode());
-        result = prime * result + ((getCityZipcode() == null) ? 0 : getCityZipcode().hashCode());
-        result = prime * result + ((getCityConfirmedcount() == null) ? 0 : getCityConfirmedcount().hashCode());
-        result = prime * result + ((getCitySuspectedcount() == null) ? 0 : getCitySuspectedcount().hashCode());
-        result = prime * result + ((getCityCuredcount() == null) ? 0 : getCityCuredcount().hashCode());
-        result = prime * result + ((getCityDeadcount() == null) ? 0 : getCityDeadcount().hashCode());
-        result = prime * result + ((getUpdatetime() == null) ? 0 : getUpdatetime().hashCode());
-        result = prime * result + ((getCityCurrentconfirmedcount() == null) ? 0 : getCityCurrentconfirmedcount().hashCode());
-        result = prime * result + ((getIncreasedconfirmedcount() == null) ? 0 : getIncreasedconfirmedcount().hashCode());
+        result = prime * result + ((getCityName() == null) ? 0 : getCityName().hashCode());
+        result = prime * result + ((getCityEnglishName() == null) ? 0 : getCityEnglishName().hashCode());
+        result = prime * result + ((getCityZipCode() == null) ? 0 : getCityZipCode().hashCode());
+        result = prime * result + ((getCityConfirmedCount() == null) ? 0 : getCityConfirmedCount().hashCode());
+        result = prime * result + ((getCitySuspectedCount() == null) ? 0 : getCitySuspectedCount().hashCode());
+        result = prime * result + ((getCityCuredCount() == null) ? 0 : getCityCuredCount().hashCode());
+        result = prime * result + ((getCityDeadCount() == null) ? 0 : getCityDeadCount().hashCode());
+        result = prime * result + ((getUpdateTime() == null) ? 0 : getUpdateTime().hashCode());
+        result = prime * result + ((getCityCurrentconfirmedCount() == null) ? 0 : getCityCurrentconfirmedCount().hashCode());
+        result = prime * result + ((getIncreasedconfirmedCount() == null) ? 0 : getIncreasedconfirmedCount().hashCode());
         result = prime * result + ((getLabel() == null) ? 0 : getLabel().hashCode());
         return result;
     }
@@ -182,16 +182,16 @@ public class Disct implements Serializable {
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
         sb.append(", key=").append(key);
-        sb.append(", cityname=").append(cityname);
-        sb.append(", cityenglishname=").append(cityenglishname);
-        sb.append(", cityZipcode=").append(cityZipcode);
-        sb.append(", cityConfirmedcount=").append(cityConfirmedcount);
-        sb.append(", citySuspectedcount=").append(citySuspectedcount);
-        sb.append(", cityCuredcount=").append(cityCuredcount);
-        sb.append(", cityDeadcount=").append(cityDeadcount);
-        sb.append(", updatetime=").append(updatetime);
-        sb.append(", cityCurrentconfirmedcount=").append(cityCurrentconfirmedcount);
-        sb.append(", increasedconfirmedcount=").append(increasedconfirmedcount);
+        sb.append(", cityName=").append(cityName);
+        sb.append(", cityEnglishName=").append(cityEnglishName);
+        sb.append(", cityZipCode=").append(cityZipCode);
+        sb.append(", cityConfirmedCount=").append(cityConfirmedCount);
+        sb.append(", citySuspectedCount=").append(citySuspectedCount);
+        sb.append(", cityCuredCount=").append(cityCuredCount);
+        sb.append(", cityDeadCount=").append(cityDeadCount);
+        sb.append(", updateTime=").append(updateTime);
+        sb.append(", cityCurrentconfirmedCount=").append(cityCurrentconfirmedCount);
+        sb.append(", increasedconfirmedCount=").append(increasedconfirmedCount);
         sb.append(", label=").append(label);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");

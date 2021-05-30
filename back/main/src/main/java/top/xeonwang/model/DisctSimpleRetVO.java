@@ -9,7 +9,7 @@ import java.time.LocalDate;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class DisctRetVO {
+public class DisctSimpleRetVO {
     private LocalDate updateTime;
     private String disctName;
     private Long confirmCount;
@@ -19,15 +19,15 @@ public class DisctRetVO {
     private Long increase;
     private Byte label;
 
-    public static DisctRetVO fromPO(Disct po){
-        DisctRetVO vo = new DisctRetVO();
-        vo.updateTime = po.getUpdatetime();
-        vo.disctName = po.getCityname();
-        vo.confirmCount = po.getCityConfirmedcount();
-        vo.curedCount = po.getCityCuredcount();
-        vo.deadCount = po.getCityDeadcount();
-        vo.currentCount = po.getCityCurrentconfirmedcount();
-        vo.increase = po.getIncreasedconfirmedcount();
+    public static DisctSimpleRetVO fromPO(Disct po){
+        DisctSimpleRetVO vo = new DisctSimpleRetVO();
+        vo.updateTime = po.getUpdateTime();
+        vo.disctName = po.getCityName();
+        vo.confirmCount = po.getCityConfirmedCount();
+        vo.curedCount = po.getCityCuredCount();
+        vo.deadCount = po.getCityDeadCount();
+        vo.currentCount = po.getCityCurrentconfirmedCount();
+        vo.increase = po.getIncreasedconfirmedCount();
         vo.label = po.getLabel();
         return vo;
     }
