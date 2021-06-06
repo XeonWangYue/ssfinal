@@ -24,6 +24,7 @@
 // import Chart5 from './Page5';
 import Avatar from './Root';
 import Senti from './sentiment'
+
 export default {
   name: 'App',
   components: {
@@ -43,9 +44,7 @@ export default {
     display: block;
     text-align: center;
   }
-  .container{
 
-  }
   .b-example-divider {
     height: 3rem;
     background-color: rgba(0, 0, 0, .1);
