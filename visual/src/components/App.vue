@@ -18,11 +18,11 @@
 </template>
 
 <script>
-import Confirm from './Page1';
-import Change from './Page2';
-import Death from './Page3';
-import Cured from './Page4';
-import Map from './Page5';
+import Confirm from './Confirm';
+import Change from './Change';
+import Death from './Death';
+import Cured from './Cured';
+import Map from './Map';
 import Avatar from './Root';
 import Senti from './sentiment'
 

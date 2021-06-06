@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div id="map1" class="col-md-12"></div>
+    <div id="map3" class="col-md-12"></div>
   </div>
 </template>
 
@@ -9,7 +9,7 @@ let echarts = require("echarts");
 let $ = require("jquery");
 
 $(document).ready(() => {
-  var myChart = echarts.init(document.getElementById("map1"), "white", {
+  var myChart = echarts.init(document.getElementById("map3"), "white", {
     renderer: "canvas",
   });
   var option = {
@@ -188,7 +188,7 @@ $(document).ready(() => {
     ],
     title: [
       {
-        text: "上海市疫情确诊人数变化趋势",
+        text: "上海市疫情死亡人数变化趋势",
         left: "center",
         padding: 5,
         itemGap: 10,
@@ -205,7 +205,7 @@ $(document).ready(() => {
     url: "/api/discname",
     async: false,
     contentType: "application/json",
-    success: function(result) {
+    success: function (result) {
       discname = JSON.parse(result);
     },
   });
@@ -214,7 +214,7 @@ $(document).ready(() => {
     url: "/api/date/range",
     async: false,
     contentType: "application/json",
-    success: function(result) {
+    success: function (result) {
       let date = JSON.parse(result);
       option.xAxis[0].data = date;
     },
@@ -224,14 +224,14 @@ $(document).ready(() => {
     url: "/api/disct/all",
     async: false,
     contentType: "application/json",
-    success: function(result) {
+    success: function (result) {
       let data = JSON.parse(result);
       for (let i = 0; i < data.length; i++) {
         let nums = new Array();
         for (let j = data[i].length - 1; j >= 0; j--)
           nums.push({
             category: data[i][j].updateTime,
-            value: data[i][j].confirmCount,
+            value: data[i][j].deadCount,
           });
         option.series[i] = {
           type: "line",
@@ -242,7 +242,7 @@ $(document).ready(() => {
           smooth: false,
           clip: true,
           step: false,
-          itemStyle: { normal: { color: option.color[i] } },
+          itemStyle: {normal: {color: option.color[i]}},
           data: nums,
           hoverAnimation: true,
           label: {
@@ -269,12 +269,11 @@ $(document).ready(() => {
   });
 
   let isSet = false;
-  $(document).on("scroll", function() {
-    if (!isSet && window.pageYOffset >= 20) {
+  $(document).on("scroll", function () {
+    if (!isSet && window.pageYOffset >= 2800) {
       isSet = true;
       myChart.setOption(option);
     }
-    console.log(window.pageYOffset)
   });
 });
 
@@ -285,7 +284,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-#map1 {
+#map3 {
   position: center;
   padding: 30px 0px;
   width: 1400px;

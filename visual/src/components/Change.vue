@@ -261,7 +261,7 @@ $(document).ready(() => {
     ],
     "title": [
       {
-        "text": "\u4e0a\u6d77\u5e02\u75ab\u60c5\u53d8\u5316\u8d8b\u52bf",
+        "text": "上海市疫情变化趋势",
         "left": "center",
         "padding": 5,
         "itemGap": 10,
@@ -307,12 +307,12 @@ $(document).ready(() => {
           value: data[i].confirmCount,
         });
       }
-      // myChart.setOption(option);
     },
   });
-  let isSet = false;
+  myChart.setOption(option);
+  let isSet = true;
   $(document).on("scroll", function () {
-    if (!isSet && window.pageYOffset >= 1000) {
+    if (!isSet && window.pageYOffset >= 0) {
       isSet = true;
       myChart.setOption(option);
     }

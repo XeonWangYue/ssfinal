@@ -271,7 +271,7 @@ $(document).ready(() => {
 
   let isSet = false;
   $(document).on("scroll", function () {
-    if (!isSet && window.pageYOffset >= 2800) {
+    if (!isSet && window.pageYOffset >= 1900) {
       isSet = true;
       myChart.setOption(option);
     }
