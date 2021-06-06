@@ -2,15 +2,15 @@
   <div id="app">
     <Avatar />
     <main>
-      <Chart1 />
+      <Change />
       <div class="b-example-divider"></div>
-      <Chart2 />
+      <Confirm />
       <div class="b-example-divider"></div>
-      <Chart3 />
+      <Cured />
       <div class="b-example-divider"></div>
-      <Chart4 />
+      <Death />
       <div class="b-example-divider"></div>
-      <Chart5 />
+      <Map />
       <div class="b-example-divider"></div>
       <Senti />
     </main>
@@ -18,22 +18,22 @@
 </template>
 
 <script>
-import Chart1 from './Page1';
-import Chart2 from './Page2';
-import Chart3 from './Page3';
-import Chart4 from './Page4';
-import Chart5 from './Page5';
+import Confirm from './Page1';
+import Change from './Page2';
+import Death from './Page3';
+import Cured from './Page4';
+import Map from './Page5';
 import Avatar from './Root';
 import Senti from './sentiment'
 
 export default {
   name: 'App',
   components: {
-    Chart1,
-    Chart2,
-    Chart3,
-    Chart4,
-    Chart5,
+    Confirm,
+    Change,
+    Death,
+    Cured,
+    Map,
     Avatar,
     Senti
   },

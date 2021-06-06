@@ -190,7 +190,7 @@ $(document).ready(() => {
     title: [
       {
         text:
-            "上海市疫情确诊人数变化趋势",
+            "上海市疫情治愈人数变化趋势",
         left: "center",
         padding: 5,
         itemGap: 10,
