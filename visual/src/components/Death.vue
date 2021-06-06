@@ -12,6 +12,11 @@ $(document).ready(() => {
   var myChart = echarts.init(document.getElementById("map3"), "white", {
     renderer: "canvas",
   });
+  myChart.showLoading({
+    text: '数据正在加载...',
+    textStyle: { fontSize : 30 , color: '#444' },
+    effectOption: {backgroundColor: '#999999'}
+  })
   var option = {
     animation: true,
     animationThreshold: 2000,
@@ -272,6 +277,7 @@ $(document).ready(() => {
   $(document).on("scroll", function () {
     if (!isSet && window.pageYOffset >= 2800) {
       isSet = true;
+      myChart.hideLoading();
       myChart.setOption(option);
     }
   });

@@ -10,6 +10,11 @@ let $ = require('jquery');
 
 $(document).ready(() => {
   let myChart = echarts.init(document.getElementById('senti'));
+  myChart.showLoading({
+    text: '数据正在加载...',
+    textStyle: { fontSize : 30 , color: '#444' },
+    effectOption: {backgroundColor: '#999999'}
+  })
   let option = {
     title: [
       {
@@ -83,6 +88,7 @@ $(document).ready(() => {
   $(document).on("scroll", function () {
     if (!isSet && window.pageYOffset >= 4600) {
       isSet = true;
+      myChart.hideLoading();
       myChart.setOption(option);
     }
   });

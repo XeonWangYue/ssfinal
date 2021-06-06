@@ -15,6 +15,11 @@ $(document).ready(() => {
   var myChart = echarts.init(document.getElementById("map2"), "white", {
     renderer: "canvas",
   });
+  myChart.showLoading({
+    text: '数据正在加载...',
+    textStyle: { fontSize : 30 , color: '#444' },
+    effectOption: {backgroundColor: '#999999'}
+  })
   option = {
     "animation": true,
     "animationThreshold": 2000,
@@ -309,11 +314,13 @@ $(document).ready(() => {
       }
     },
   });
+  myChart.hideLoading();
   myChart.setOption(option);
   let isSet = true;
   $(document).on("scroll", function () {
     if (!isSet && window.pageYOffset >= 0) {
       isSet = true;
+      myChart.hideLoading();
       myChart.setOption(option);
     }
   });
