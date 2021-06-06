@@ -2,37 +2,38 @@
   <div id="app">
     <Avatar />
     <main>
-<!--      <Chart1 />-->
-<!--      <div class="b-example-divider"></div>-->
-<!--      <Chart2 />-->
-<!--      <div class="b-example-divider"></div>-->
-<!--      <Chart3 />-->
-<!--      <div class="b-example-divider"></div>-->
-<!--      <Chart4 />-->
-<!--      <div class="b-example-divider"></div>-->
-<!--      <Chart5 />-->
+      <Chart1 />
+      <div class="b-example-divider"></div>
+      <Chart2 />
+      <div class="b-example-divider"></div>
+      <Chart3 />
+      <div class="b-example-divider"></div>
+      <Chart4 />
+      <div class="b-example-divider"></div>
+      <Chart5 />
+      <div class="b-example-divider"></div>
       <Senti />
     </main>
   </div>
 </template>
 
 <script>
-// import Chart1 from './Page1';
-// import Chart2 from './Page2';
-// import Chart3 from './Page3';
-// import Chart4 from './Page4';
-// import Chart5 from './Page5';
+import Chart1 from './Page1';
+import Chart2 from './Page2';
+import Chart3 from './Page3';
+import Chart4 from './Page4';
+import Chart5 from './Page5';
 import Avatar from './Root';
 import Senti from './sentiment'
 
 export default {
   name: 'App',
   components: {
-    // Chart1,
-    // Chart2,
-    // Chart3,
-    // Chart4,
-    // Chart5,
+    Chart1,
+    Chart2,
+    Chart3,
+    Chart4,
+    Chart5,
     Avatar,
     Senti
   },

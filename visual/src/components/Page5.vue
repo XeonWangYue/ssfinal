@@ -17,17 +17,19 @@ $.ajax({
   url: "/api/disct",
   async: false,
   contentType: "application/json",
-  success: function(data) {
+  success: function (data) {
     odata = data;
   },
 });
 let obj = JSON.parse(odata);
+let dateline = Array();
 for (let i = 0; i < obj.length; i++) {
   let day = obj[i];
   let oneday = new Array();
   for (let j = 0; j < day.length; j++) {
-    oneday.push({ name: day[j].disctName, value: day[j].currentCount });
+    oneday.push({name: day[j].disctName, value: day[j].currentCount});
   }
+  dateline.push(day[0].updateTime);
   pdata.push(oneday);
 }
 
@@ -37,20 +39,12 @@ $(document).ready(() => {
   echarts.registerMap("shanghai", geojson);
   option = {
     baseOption: {
-      animation: true,
-      animationThreshold: 2000,
-      animationDuration: 5000,
-      animationEasing: "cubicOut",
-      animationDelay: 0,
-      animationDurationUpdate: 300,
-      animationEasingUpdate: "cubicOut",
-      animationDelayUpdate: 0,
       timeline: {
+        autoPlay: true,
         axisType: "category",
         inverse: false,
-        playInterval: 500,
+        playInterval: 100,
         left: "center",
-        //right: null,
         top: "90%",
         width: "80%",
         label: {
@@ -86,22 +80,24 @@ $(document).ready(() => {
             borderColor: "#aaa",
           },
         },
-        data: [],
+        data: dateline,
       },
       title: {
-        text: "上海地图",
-        subtext: "-。-",
+        text: "上海地图疫情地图",
+        textStyle: {
+          fontSize: 30
+        }
       },
       tooltip: {
         trigger: "item",
-        formatter: function(obj) {
+        formatter: function (obj) {
           return "区县： " + obj.name + "<br>" + "人数：" + obj.value + "<br>";
         },
       },
       dataRange: {
         min: 0,
         max: 50,
-        color: ["red", "white"],
+        color: ["#ff6666", "#ccffff"],
         text: ["高", "低"], // 文本，默认为数值文本
         calculable: true,
       },
@@ -139,12 +135,7 @@ $(document).ready(() => {
   };
 
   for (let i = 0; i < pdata.length; i++) {
-    option.baseOption.timeline.data.push(i);
     option.options.push({
-      title: {
-        show: true,
-        text: i + "",
-      },
       series: {
         name: "map",
         type: "map",
@@ -155,8 +146,8 @@ $(document).ready(() => {
     });
   }
   let isSet = false;
-  $(document).on("scroll", function() {
-    if (!isSet && window.pageYOffset >= 2400) {
+  $(document).on("scroll", function () {
+    if (!isSet && window.pageYOffset >= 3800) {
       isSet = true;
       myChart.setOption(option);
     }
@@ -171,6 +162,6 @@ export default {
   position: center;
   padding: 30px 0px;
   width: 1400px;
-  height: 1000px;
+  height: 900px;
 }
 </style>

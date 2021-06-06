@@ -9,12 +9,11 @@ let echarts = require("echarts");
 let $ = require('jquery');
 
 
-
-$(document).ready(()=>{
-   var myChart= echarts.init(
+$(document).ready(() => {
+  var myChart = echarts.init(
       document.getElementById("map4"),
       'white', {renderer: 'canvas'});
-  var option= {
+  var option = {
     animation: true,
     animationThreshold: 2000,
     animationDuration: 5000,
@@ -49,9 +48,7 @@ $(document).ready(()=>{
       "#6950a1",
       "#918597"
     ],
-   series:[
-       
-   ],
+    series: [],
     legend: [
       {
         data: [
@@ -202,26 +199,27 @@ $(document).ready(()=>{
         }
       }
     ],
-    };
+  };
 
 
-let discname=[]
-     $.ajax({
+  let discname = []
+  $.ajax({
     method: "get",
     url: "/api/discname",
     async: false,
     contentType: "application/json",
-    success: function (result){
-    discname=JSON.parse(result);
-  }})
-      $.ajax({
+    success: function (result) {
+      discname = JSON.parse(result);
+    }
+  })
+  $.ajax({
     method: "get",
     url: "/api/date/range",
     async: false,
     contentType: "application/json",
-    success: function (result){
-      let date=JSON.parse(result);
-      option.xAxis[0].data=date;
+    success: function (result) {
+      let date = JSON.parse(result);
+      option.xAxis[0].data = date;
     }
   })
   $.ajax({
@@ -229,55 +227,55 @@ let discname=[]
     url: "/api/disct/all",
     async: false,
     contentType: "application/json",
-    success: function (result){
-     let  data=JSON.parse(result);
-      for(let i=0;i<data.length;i++)
-       {
-         let nums=new Array();
-         for(let j=data[i].length-1;j>=0;j--)
-            nums.push({"category":data[i][j].updateTime,"value":data[i][j].curedCount})
-        option.series[i]={
+    success: function (result) {
+      let data = JSON.parse(result);
+      for (let i = 0; i < data.length; i++) {
+        let nums = new Array();
+        for (let j = data[i].length - 1; j >= 0; j--)
+          nums.push({"category": data[i][j].updateTime, "value": data[i][j].curedCount})
+        option.series[i] = {
           type: 'line',
-          name:discname[i],
-           connectNulls: false,
-        symbolSize: 4,
-        showSymbol: true,
-        smooth: false,
-        clip: true,
-        step: false,
+          name: discname[i],
+          connectNulls: false,
+          symbolSize: 4,
+          showSymbol: true,
+          smooth: false,
+          clip: true,
+          step: false,
           itemStyle: {normal: {color: option.color[i]}},
-          data:nums,
+          data: nums,
           hoverAnimation: true,
-        label: {
-          show: false,
-          position: "top",
-          margin: 8
-        },
-        lineStyle: {
-          "show": true,
-          "width": 4,
-          "opacity": 1,
-          "curveness": 0,
-          "type": "solid"
-        },
-        areaStyle: {
-          "opacity": 0
-        },
-        zlevel: 0,
-        z: 0
-  };
-      myChart.setOption(option)
-  }
-    }})
-
-
- let isSet = false;
-    $(document).on("scroll", function(){
-      if(!isSet && window.pageYOffset>=2400){
-        isSet = true;
-        myChart.setOption(option);
+          label: {
+            show: false,
+            position: "top",
+            margin: 8
+          },
+          lineStyle: {
+            "show": true,
+            "width": 4,
+            "opacity": 1,
+            "curveness": 0,
+            "type": "solid"
+          },
+          areaStyle: {
+            "opacity": 0
+          },
+          zlevel: 0,
+          z: 0
+        };
+        // myChart.setOption(option)
       }
-    });
+    }
+  })
+
+
+  let isSet = false;
+  $(document).on("scroll", function () {
+    if (!isSet && window.pageYOffset >= 2800) {
+      isSet = true;
+      myChart.setOption(option);
+    }
+  });
 });
 
 export default {
@@ -291,6 +289,6 @@ export default {
   position: center;
   padding: 30px 0px;
   width: 1400px;
-  height: 1000px;
+  height: 900px;
 }
 </style>

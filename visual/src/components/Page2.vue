@@ -16,15 +16,15 @@ $(document).ready(() => {
     renderer: "canvas",
   });
   option = {
-    animation: true,
-    animationThreshold: 2000,
-    animationDuration: 5000,
-    animationEasing: "cubicOut",
-    animationDelay: 0,
-    animationDurationUpdate: 300,
-    animationEasingUpdate: "cubicOut",
-    animationDelayUpdate: 0,
-    color: [
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 3000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "color": [
       "#c23531",
       "#2f4554",
       "#61a0a8",
@@ -48,217 +48,237 @@ $(document).ready(() => {
       "#ac6767",
       "#1d953f",
       "#6950a1",
-      "#918597",
+      "#918597"
     ],
-    legend: [
+    "series": [
       {
-        data: ["确诊人数", "治愈人数", "死亡人数"],
-        selected: {
-          确诊人数: true,
-          治愈人数: true,
-          死亡人数: true,
+        "type": "line",
+        "name": "\u786e\u8bca\u4eba\u6570",
+        "connectNulls": false,
+        "symbolSize": 4,
+        "showSymbol": true,
+        "smooth": true,
+        "clip": true,
+        "step": false,
+        "data": confirm,
+        "hoverAnimation": true,
+        "label": {
+          "show": false,
+          "position": "top",
+          "margin": 8
         },
-        show: true,
-        right: 35,
-        top: "35%",
-        orient: "vertical",
-        padding: 5,
-        itemGap: 20,
-        itemWidth: 25,
-        itemHeight: 14,
-        textStyle: {
-          fontSize: 15,
+        "lineStyle": {
+          "show": true,
+          "width": 4,
+          "opacity": 1,
+          "curveness": 0,
+          "type": "solid"
         },
+        "areaStyle": {
+          "opacity": 0.5
+        },
+        "zlevel": 0,
+        "z": 0,
+        "rippleEffect": {
+          "show": true,
+          "brushType": "stroke",
+          "scale": 2.5,
+          "period": 4
+        }
       },
+      {
+        "type": "line",
+        "name": "\u6cbb\u6108\u4eba\u6570",
+        "connectNulls": false,
+        "symbolSize": 4,
+        "showSymbol": true,
+        "smooth": true,
+        "clip": true,
+        "step": false,
+        "data": cured,
+        "hoverAnimation": true,
+        "label": {
+          "show": false,
+          "position": "top",
+          "margin": 8
+        },
+        "lineStyle": {
+          "show": true,
+          "width": 4,
+          "opacity": 1,
+          "curveness": 0,
+          "type": "solid"
+        },
+        "areaStyle": {
+          "opacity": 0.5
+        },
+        "zlevel": 0,
+        "z": 0,
+        "rippleEffect": {
+          "show": true,
+          "brushType": "stroke",
+          "scale": 2.5,
+          "period": 4
+        }
+      },
+      {
+        "type": "line",
+        "name": "\u6b7b\u4ea1\u4eba\u6570",
+        "connectNulls": false,
+        "symbolSize": 4,
+        "showSymbol": true,
+        "smooth": true,
+        "clip": true,
+        "step": false,
+        "data": dead,
+        "hoverAnimation": true,
+        "label": {
+          "show": false,
+          "position": "top",
+          "margin": 8
+        },
+        "lineStyle": {
+          "show": true,
+          "width": 4,
+          "opacity": 1,
+          "curveness": 0,
+          "type": "solid"
+        },
+        "areaStyle": {
+          "opacity": 0.5
+        },
+        "zlevel": 0,
+        "z": 0,
+        "rippleEffect": {
+          "show": true,
+          "brushType": "stroke",
+          "scale": 2.5,
+          "period": 4
+        }
+      }
     ],
-    series: [
+    "legend": [
       {
-        name: "治愈人数",
-        type: "line",
-        connectNulls: false,
-        symbolSize: 4,
-        showSymbol: true,
-        smooth: false,
-        clip: true,
-        step: false,
-        hoverAnimation: true,
-        label: {
-          show: false,
-          position: "top",
-          margin: 8,
+        "data": [
+          "\u786e\u8bca\u4eba\u6570",
+          "\u6cbb\u6108\u4eba\u6570",
+          "\u6b7b\u4ea1\u4eba\u6570"
+        ],
+        "selected": {
+          "\u786e\u8bca\u4eba\u6570": true,
+          "\u6cbb\u6108\u4eba\u6570": true,
+          "\u6b7b\u4ea1\u4eba\u6570": true
         },
-        lineStyle: {
-          show: true,
-          width: 4,
-          opacity: 1,
-          curveness: 0,
-          type: "solid",
-        },
-        areaStyle: {
-          opacity: 0.5,
-        },
-        zlevel: 0,
-        z: 0,
-        data: cured,
-      },
-      {
-        name: "死亡人数",
-        type: "line",
-        connectNulls: false,
-        symbolSize: 4,
-        showSymbol: true,
-        smooth: false,
-        clip: true,
-        step: false,
-        hoverAnimation: true,
-        label: {
-          show: false,
-          position: "top",
-          margin: 8,
-        },
-        lineStyle: {
-          show: true,
-          width: 4,
-          opacity: 1,
-          curveness: 0,
-          type: "solid",
-        },
-        areaStyle: {
-          opacity: 0.5,
-        },
-        zlevel: 0,
-        z: 0,
-        data: dead,
-      },
-      {
-        name: "确诊人数",
-        type: "line",
-        connectNulls: false,
-        symbolSize: 4,
-        showSymbol: true,
-        smooth: false,
-        clip: true,
-        step: false,
-        hoverAnimation: true,
-        label: {
-          show: false,
-          position: "top",
-          margin: 8,
-        },
-        lineStyle: {
-          show: true,
-          width: 4,
-          opacity: 1,
-          curveness: 0,
-          type: "solid",
-        },
-        areaStyle: {
-          opacity: 0.5,
-        },
-        zlevel: 0,
-        z: 0,
-        data: confirm,
-      },
+        "show": true,
+        "right": 35,
+        "top": "35%",
+        "orient": "vertical",
+        "padding": 5,
+        "itemGap": 20,
+        "itemWidth": 25,
+        "itemHeight": 14,
+        "textStyle": {
+          "fontSize": 15
+        }
+      }
     ],
-
-    tooltip: {
-      show: true,
-      trigger: "axis",
-      triggerOn: "mousemove|click",
-      axisPointer: {
-        type: "line",
+    "tooltip": {
+      "show": true,
+      "trigger": "axis",
+      "triggerOn": "mousemove|click",
+      "axisPointer": {
+        "type": "line"
       },
-      showContent: true,
-      alwaysShowContent: false,
-      showDelay: 0,
-      hideDelay: 100,
-      textStyle: {
-        fontSize: 14,
+      "showContent": true,
+      "alwaysShowContent": false,
+      "showDelay": 0,
+      "hideDelay": 100,
+      "textStyle": {
+        "fontSize": 14
       },
-      borderWidth: 0,
-      padding: 5,
+      "borderWidth": 0,
+      "padding": 5
     },
-    // grid: {
-    //   left: "20%",
-    //   top: "20%",
-    //   right: "20%",
-    //   bottom: "30%",
-    //   containLabel: false  // 这个啥？看下面
-    // },
-    xAxis: [
+    "xAxis": [
       {
-        type: "category",
-        show: true,
-        scale: false,
-        nameLocation: "end",
-        nameGap: 15,
-        gridIndex: 0,
-        inverse: false,
-        offset: 0,
-        splitNumber: 5,
-        boundaryGap: false,
-        minInterval: 0,
-        splitLine: {
-          show: false,
-          lineStyle: {
-            show: true,
-            width: 1,
-            opacity: 1,
-            curveness: 0,
-            type: "solid",
-          },
+        "type": "category",
+        "show": true,
+        "scale": false,
+        "nameLocation": "end",
+        "nameGap": 15,
+        "gridIndex": 0,
+        "axisTick": {
+          "show": true,
+          "alignWithLabel": true,
+          "inside": false
         },
-        data: null,
-      },
+        "inverse": false,
+        "offset": 0,
+        "splitNumber": 5,
+        "boundaryGap": false,
+        "minInterval": 0,
+        "splitLine": {
+          "show": false,
+          "lineStyle": {
+            "show": true,
+            "width": 1,
+            "opacity": 1,
+            "curveness": 0,
+            "type": "solid"
+          }
+        },
+        "data": null
+      }
     ],
-    yAxis: [
+    "yAxis": [
       {
-        type: "value",
-        show: true,
-        scale: false,
-        nameLocation: "end",
-        nameGap: 15,
-        gridIndex: 0,
-        axisTick: {
-          show: true,
-          alignWithLabel: false,
-          inside: false,
+        "type": "value",
+        "show": true,
+        "scale": false,
+        "nameLocation": "end",
+        "nameGap": 15,
+        "gridIndex": 0,
+        "axisTick": {
+          "show": true,
+          "alignWithLabel": false,
+          "inside": false
         },
-        inverse: false,
-        offset: 0,
-        splitNumber: 5,
-        minInterval: 0,
-        splitLine: {
-          show: true,
-          lineStyle: {
-            show: true,
-            width: 1,
-            opacity: 1,
-            curveness: 0,
-            type: "solid",
-          },
-        },
-      },
+        "inverse": false,
+        "offset": 0,
+        "splitNumber": 5,
+        "minInterval": 0,
+        "splitLine": {
+          "show": true,
+          "lineStyle": {
+            "show": true,
+            "width": 1,
+            "opacity": 1,
+            "curveness": 0,
+            "type": "solid"
+          }
+        }
+      }
     ],
-    title: [
+    "title": [
       {
-        text: "上海市疫情变化趋势",
-        left: "center",
-        padding: 5,
-        itemGap: 10,
-        textStyle: {
-          fontSize: 30,
-        },
-      },
-    ],
+        "text": "\u4e0a\u6d77\u5e02\u75ab\u60c5\u53d8\u5316\u8d8b\u52bf",
+        "left": "center",
+        "padding": 5,
+        "itemGap": 10,
+        "textStyle": {
+          "fontSize": 30
+        }
+      }
+    ]
   };
+
   var option;
   $.ajax({
     method: "get",
     url: "/api/date/range",
     async: false,
     contentType: "application/json",
-    success: function(result) {
+    success: function (result) {
       let date = JSON.parse(result);
       option.xAxis[0].data = date;
     },
@@ -268,7 +288,7 @@ $(document).ready(() => {
     url: "/api/disct/上海市",
     async: false,
     contentType: "application/json",
-    success: function(result) {
+    success: function (result) {
       let data = JSON.parse(result);
 
       for (let i = 0; i < data.length; i++) {
@@ -287,12 +307,12 @@ $(document).ready(() => {
           value: data[i].confirmCount,
         });
       }
-      myChart.setOption(option);
+      // myChart.setOption(option);
     },
   });
   let isSet = false;
-  $(document).on("scroll", function() {
-    if (!isSet && window.pageYOffset >= 2400) {
+  $(document).on("scroll", function () {
+    if (!isSet && window.pageYOffset >= 1000) {
       isSet = true;
       myChart.setOption(option);
     }
@@ -310,6 +330,6 @@ export default {
   position: center;
   padding: 30px 0px;
   width: 1400px;
-  height: 1000px;
+  height: 900px;
 }
 </style>

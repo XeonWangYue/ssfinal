@@ -15,7 +15,7 @@ $(document).ready(() => {
   var option = {
     animation: true,
     animationThreshold: 2000,
-    animationDuration: 5000,
+    animationDuration: 3000,
     animationEasing: "cubicOut",
     animationDelay: 0,
     animationDurationUpdate: 300,
@@ -205,7 +205,7 @@ $(document).ready(() => {
     url: "/api/discname",
     async: false,
     contentType: "application/json",
-    success: function(result) {
+    success: function (result) {
       discname = JSON.parse(result);
     },
   });
@@ -214,7 +214,7 @@ $(document).ready(() => {
     url: "/api/date/range",
     async: false,
     contentType: "application/json",
-    success: function(result) {
+    success: function (result) {
       let date = JSON.parse(result);
       option.xAxis[0].data = date;
     },
@@ -224,7 +224,7 @@ $(document).ready(() => {
     url: "/api/disct/all",
     async: false,
     contentType: "application/json",
-    success: function(result) {
+    success: function (result) {
       let data = JSON.parse(result);
       for (let i = 0; i < data.length; i++) {
         let nums = new Array();
@@ -242,7 +242,7 @@ $(document).ready(() => {
           smooth: false,
           clip: true,
           step: false,
-          itemStyle: { normal: { color: option.color[i] } },
+          itemStyle: {normal: {color: option.color[i]}},
           data: nums,
           hoverAnimation: true,
           label: {
@@ -263,14 +263,14 @@ $(document).ready(() => {
           zlevel: 0,
           z: 0,
         };
-        myChart.setOption(option);
+        // myChart.setOption(option);
       }
     },
   });
 
   let isSet = false;
-  $(document).on("scroll", function() {
-    if (!isSet && window.pageYOffset >= 2400) {
+  $(document).on("scroll", function () {
+    if (!isSet && window.pageYOffset >= 1900) {
       isSet = true;
       myChart.setOption(option);
     }
@@ -288,6 +288,6 @@ export default {
   position: center;
   padding: 30px 0px;
   width: 1400px;
-  height: 1000px;
+  height: 900px;
 }
 </style>

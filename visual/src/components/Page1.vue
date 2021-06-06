@@ -15,7 +15,7 @@ $(document).ready(() => {
   var option = {
     animation: true,
     animationThreshold: 2000,
-    animationDuration: 5000,
+    animationDuration: 3000,
     animationEasing: "cubicOut",
     animationDelay: 0,
     animationDurationUpdate: 300,
@@ -263,17 +263,18 @@ $(document).ready(() => {
           zlevel: 0,
           z: 0,
         };
-        myChart.setOption(option);
+        // myChart.setOption(option);
       }
     },
   });
 
   let isSet = false;
   $(document).on("scroll", function() {
-    if (!isSet && window.pageYOffset >= 2400) {
+    if (!isSet && window.pageYOffset >= 20) {
       isSet = true;
       myChart.setOption(option);
     }
+    console.log(window.pageYOffset)
   });
 });
 
@@ -288,6 +289,6 @@ export default {
   position: center;
   padding: 30px 0px;
   width: 1400px;
-  height: 1000px;
+  height: 900px;
 }
 </style>
