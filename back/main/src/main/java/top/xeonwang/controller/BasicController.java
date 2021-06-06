@@ -14,6 +14,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Slf4j
@@ -23,7 +24,26 @@ public class BasicController {
     private BasicService service;
 
     private ArrayList<String> array;
-    private String[] disc = {"宝山区","静安区","崇明区","奉贤区","嘉定区","金山区","黄浦区","长宁区","虹口区","闵行区","浦东新区","普陀区","青浦区","松江区","徐汇区","杨浦区"};
+    private String[] disc = {  "宝山区",
+            "崇明区",
+            "奉贤区",
+            "虹口区",
+            "黄浦区",
+            "嘉定区",
+            "金山区",
+            "境外来沪",
+            "境外输入",
+            "静安区",
+            "闵行区",
+            "浦东新区",
+            "普陀区",
+            "青浦区",
+            "松江区",
+            "外地来沪",
+            "未知地区",
+            "徐汇区",
+            "杨浦区",
+            "长宁区"};
 
     @RequestMapping("/hello")
     public String getData(){
@@ -31,7 +51,12 @@ public class BasicController {
         String obj = JSON.toJSONString(service.getOne());
         return obj;
     }
-
+    @RequestMapping("/discname")
+    public String getDiscName(){
+        List<String> discList= Arrays.asList(disc);
+        String obj = JSON.toJSONString(discList);
+        return obj;
+    }
     @RequestMapping("/date/range")
     public String getDateRange(){
         log.info("date range");
@@ -57,6 +82,30 @@ public class BasicController {
         return obj;
     }
 
+    @RequestMapping("/disct/all")
+    public String getAllDisctConfirmCount(){
+        log.info("getAllDisct");
+        List<DisctSimpleRetVO> temp = service.getAllDisct();
+        List<String> discList= Arrays.asList(disc);
+        Integer length = discList.size();
+        List<List<DisctSimpleRetVO>> ret = new ArrayList<>();
+        for(int i = 0;i<length;i++){
+            ret.add(new ArrayList<>());
+        }
+        for(DisctSimpleRetVO vo : temp){
+
+            for(int i=0;i<length;i++)
+            {
+                if(vo.getDisctName().equals(discList.get(i)))
+                {
+                    ret.get(i).add(vo);
+
+                }
+            }
+        }
+
+        return JSONObject.toJSONString(ret);
+    }
     @RequestMapping("/disct")
     public String getAllDisct(){
         log.info("getAllDisct");
