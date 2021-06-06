@@ -2,15 +2,16 @@
   <div id="app">
     <Avatar />
     <main>
-      <Chart1 />
-      <div class="b-example-divider"></div>
       <Chart2 />
+      <div class="b-example-divider"></div>
+      <Chart1 />
       <div class="b-example-divider"></div>
       <Chart3 />
       <div class="b-example-divider"></div>
       <Chart4 />
       <div class="b-example-divider"></div>
       <Chart5 />
+  
     </main>
   </div>
 </template>
@@ -22,6 +23,7 @@ import Chart3 from './Page3';
 import Chart4 from './Page4';
 import Chart5 from './Page5';
 import Avatar from './Root';
+
 export default {
   name: 'App',
   components: {
@@ -40,9 +42,7 @@ export default {
     display: block;
     text-align: center;
   }
-  .container{
 
-  }
   .b-example-divider {
     height: 3rem;
     background-color: rgba(0, 0, 0, .1);
