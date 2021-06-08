@@ -1,6 +1,17 @@
 <template>
   <div class="container">
-    <div id="map3" class="col-md-12"></div>
+    <div class="row">
+      <div class="col-lg-3 col-md-4 flex-column d-flex">
+        <div class="mb-auto"></div>
+        <main>
+          <p>
+            上海市各城区死亡人数增长出现在2020年4月7日前，在此之后，没有死亡病例出现，说明确诊病例均得到了较好的救治。
+          </p>
+        </main>
+        <div class="mt-auto"></div>
+      </div>
+      <div id="map3" class="col-lg-9 col-md-8"></div>
+    </div>
   </div>
 </template>
 
@@ -13,14 +24,14 @@ $(document).ready(() => {
     renderer: "canvas",
   });
   myChart.showLoading({
-    text: '数据正在加载...',
-    textStyle: { fontSize : 30 , color: '#444' },
-    effectOption: {backgroundColor: '#999999'}
-  })
+    text: "数据正在加载...",
+    textStyle: {fontSize: 30, color: "#444"},
+    effectOption: {backgroundColor: "#999999"},
+  });
   var option = {
     animation: true,
     animationThreshold: 2000,
-    animationDuration: 3000,
+    animationDuration: 1000,
     animationEasing: "cubicOut",
     animationDelay: 0,
     animationDurationUpdate: 300,
@@ -99,16 +110,17 @@ $(document).ready(() => {
           杨浦区: true,
           长宁区: true,
         },
+        type: 'scroll',
         show: true,
-        right: 35,
-        top: 70,
-        orient: "vertical",
+        right: 0,
+        bottom: 0,
+        orient: "horizontal",
         padding: 5,
         itemGap: 20,
         itemWidth: 25,
-        itemHeight: 14,
+        itemHeight: 18,
         textStyle: {
-          fontSize: 15,
+          fontSize: 16,
         },
       },
     ],
@@ -293,7 +305,17 @@ export default {
 #map3 {
   position: center;
   padding: 30px 0px;
-  width: 1400px;
   height: 900px;
+}
+
+p {
+  margin: 10px 20px;
+  text-align: left;
+  right: 0px;
+  font-size: 20px;
+  display: block;
+  color: #86868b;
+  font-family: "SF Pro SC", "SF Pro Display", "SF Pro Icons", "PingFang SC",
+  "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 </style>

@@ -8,11 +8,9 @@
         <span class="fs-4">Simple header</span>
       </a>
       <ul class="nav nav-pills">
-        <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="index.html" class="nav-link" id="index_li">主页</a></li>
+        <li class="nav-item"><a href="covid.html" class="nav-link" id="shang_li">上海疫情</a></li>
+        <li class="nav-item"><a href="marriage.html" class="nav-link" id="marr_li">离婚冷静期</a></li>
       </ul>
     </header>
   </div>
@@ -20,11 +18,10 @@
 
 <script>
 import "bootstrap/dist/css/bootstrap.min.css";
-//0 600 1400 2200 2900
-export default {
-  name: "root"
-};
 
+export default {
+  name: "Avatar",
+};
 </script>
 <style type="text/css">
 

@@ -1,17 +1,6 @@
 <template>
   <div class="container">
-    <div class="row">
-      <div class="col-lg-3 col-md-4 d-flex flex-column">
-        <div class="mb-auto"></div>
-        <main>
-          <p>
-            从上海市各城区的疫情确诊人数变化趋势图中可以看出，疫情发展初期的确诊病例主要由本土病例构成，并在2月15日左右得到控制，表明上海市疫情已得到有效控制。其后增加的确诊病例基本为境外输入，增长速度与国际形势以及海关防控措施有直接联系。
-          </p>
-        </main>
-        <div class="mb-auto"></div>
-      </div>
-      <div id="map1" class="col-lg-9 col-md-8"></div>
-    </div>
+    <div id="map3" class="col-md-12"></div>
   </div>
 </template>
 
@@ -20,18 +9,18 @@ let echarts = require("echarts");
 let $ = require("jquery");
 
 $(document).ready(() => {
-  var myChart = echarts.init(document.getElementById("map1"), "white", {
+  var myChart = echarts.init(document.getElementById("map3"), "white", {
     renderer: "canvas",
   });
   myChart.showLoading({
-    text: "数据正在加载...",
-    textStyle: {fontSize: 30, color: "#444"},
-    effectOption: {backgroundColor: "#999999"},
-  });
+    text: '数据正在加载...',
+    textStyle: { fontSize : 30 , color: '#444' },
+    effectOption: {backgroundColor: '#999999'}
+  })
   var option = {
     animation: true,
     animationThreshold: 2000,
-    animationDuration: 1000,
+    animationDuration: 3000,
     animationEasing: "cubicOut",
     animationDelay: 0,
     animationDurationUpdate: 300,
@@ -66,7 +55,6 @@ $(document).ready(() => {
     series: [],
     legend: [
       {
-        type: "scroll",
         data: [
           "宝山区",
           "崇明区",
@@ -112,15 +100,15 @@ $(document).ready(() => {
           长宁区: true,
         },
         show: true,
-        right: 0,
-        bottom: 0,
-        orient: "horizontal",
-        margin: 10,
+        right: 5,
+        top: 70,
+        orient: "vertical",
+        padding: 5,
         itemGap: 20,
-        itemWidth: 20,
-        itemHeight: 18,
+        itemWidth: 25,
+        itemHeight: 14,
         textStyle: {
-          fontSize: 16,
+          fontSize: 15,
         },
       },
     ],
@@ -205,9 +193,9 @@ $(document).ready(() => {
     ],
     title: [
       {
-        text: "上海市疫情确诊人数变化趋势",
+        text: "上海市疫情死亡人数变化趋势",
         left: "center",
-        padding: 10,
+        padding: 5,
         itemGap: 10,
         textStyle: {
           fontSize: 30,
@@ -248,7 +236,7 @@ $(document).ready(() => {
         for (let j = data[i].length - 1; j >= 0; j--)
           nums.push({
             category: data[i][j].updateTime,
-            value: data[i][j].confirmCount,
+            value: data[i][j].deadCount,
           });
         option.series[i] = {
           type: "line",
@@ -287,7 +275,7 @@ $(document).ready(() => {
 
   let isSet = false;
   $(document).on("scroll", function () {
-    if (!isSet && window.pageYOffset >= 1000) {
+    if (!isSet && window.pageYOffset >= 2800) {
       isSet = true;
       myChart.hideLoading();
       myChart.setOption(option);
@@ -302,20 +290,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-#map1 {
+#map3 {
   position: center;
   padding: 30px 0px;
+  width: 1400px;
   height: 900px;
-}
-
-p {
-  margin: 10px 20px;
-  text-align: left;
-  right: 0px;
-  font-size: 20px;
-  display: block;
-  color: #86868b;
-  font-family: "SF Pro SC", "SF Pro Display", "SF Pro Icons", "PingFang SC",
-  "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 </style>

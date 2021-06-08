@@ -1,20 +1,6 @@
 <template>
   <div class="container">
-    <div class="row">
-      <div class="col-lg-3 col-md-4 d-flex flex-column">
-        <div class="mb-auto"></div>
-        <main>
-          <p>
-            现存病例数越多，红色越深。可以看到病例大部分集中在早期。21年1月疫情有一轮反复。
-          </p>
-          <p>
-            高风险：当前确诊大于100或较昨日新增大于5.中风险：当前确诊30至100之间.低风险：当前确诊小于30
-          </p>
-        </main>
-        <div class="mt-auto"></div>
-      </div>
-      <div id="map5" class="col-lg-9 col-md-8"></div>
-    </div>
+    <div id="map5"></div>
   </div>
 </template>
 
@@ -41,7 +27,7 @@ for (let i = 0; i < obj.length; i++) {
   let day = obj[i];
   let oneday = new Array();
   for (let j = 0; j < day.length; j++) {
-    oneday.push({name: day[j].disctName, value: day[j].label});
+    oneday.push({name: day[j].disctName, value: day[j].currentCount});
   }
   dateline.push(day[0].updateTime);
   pdata.push(oneday);
@@ -115,8 +101,8 @@ $(document).ready(() => {
       },
       dataRange: {
         min: 0,
-        max: 2,
-        color: ["#ff6666", "#afdd22", "#ffffff"],
+        max: 50,
+        color: ["#ff6666", "#ffffff"],
         text: ["高", "低"], // 文本，默认为数值文本
         calculable: true,
       },
@@ -181,17 +167,7 @@ export default {
 #map5 {
   position: center;
   padding: 30px 0px;
+  width: 1400px;
   height: 900px;
-}
-
-p {
-  margin: 10px 20px;
-  text-align: left;
-  right: 0px;
-  font-size: 20px;
-  display: block;
-  color: #86868b;
-  font-family: "SF Pro SC", "SF Pro Display", "SF Pro Icons", "PingFang SC",
-  "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 </style>

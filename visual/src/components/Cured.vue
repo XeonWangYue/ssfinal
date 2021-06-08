@@ -1,27 +1,37 @@
 <template>
   <div class="container">
-    <div id="map4" class="col-md-12"></div>
+    <div class="row">
+      <div class="col-lg-3 col-md-4 flex-column d-flex">
+        <div class="mb-auto"></div>
+        <main>
+          <p>
+            上海市各城区治愈人数变化趋势与确诊人数变化趋势基本相同，在时间上略有滞后。
+          </p>
+        </main>
+        <div class="mt-auto"></div>
+      </div>
+      <div id="map4" class="col-9"></div>
+    </div>
   </div>
 </template>
 
 <script>
 let echarts = require("echarts");
-let $ = require('jquery');
-
+let $ = require("jquery");
 
 $(document).ready(() => {
-  var myChart = echarts.init(
-      document.getElementById("map4"),
-      'white', {renderer: 'canvas'});
+  var myChart = echarts.init(document.getElementById("map4"), "white", {
+    renderer: "canvas",
+  });
   myChart.showLoading({
-    text: '数据正在加载...',
-    textStyle: { fontSize : 30 , color: '#444' },
-    effectOption: {backgroundColor: '#999999'}
-  })
+    text: "数据正在加载...",
+    textStyle: {fontSize: 30, color: "#444"},
+    effectOption: {backgroundColor: "#999999"},
+  });
   var option = {
     animation: true,
     animationThreshold: 2000,
-    animationDuration: 5000,
+    animationDuration: 1000,
     animationEasing: "cubicOut",
     animationDelay: 0,
     animationDurationUpdate: 300,
@@ -51,7 +61,7 @@ $(document).ready(() => {
       "#ac6767",
       "#1d953f",
       "#6950a1",
-      "#918597"
+      "#918597",
     ],
     series: [],
     legend: [
@@ -76,7 +86,7 @@ $(document).ready(() => {
           "未知地区",
           "徐汇区",
           "杨浦区",
-          "长宁区"
+          "长宁区",
         ],
         selected: {
           宝山区: true,
@@ -98,37 +108,38 @@ $(document).ready(() => {
           未知地区: true,
           徐汇区: true,
           杨浦区: true,
-          长宁区: true
+          长宁区: true,
         },
         show: true,
-        right: 35,
-        top: 70,
-        orient: "vertical",
+        type: "scroll",
+        right: 0,
+        bottom: 0,
+        orient: "horizontal",
         padding: 5,
         itemGap: 20,
         itemWidth: 25,
-        itemHeight: 14,
+        itemHeight: 18,
         textStyle: {
-          fontSize: 15
-        }
-      }
+          fontSize: 16,
+        },
+      },
     ],
     tooltip: {
       show: true,
       trigger: "axis",
       triggerOn: "mousemove|click",
       axisPointer: {
-        type: "line"
+        type: "line",
       },
       showContent: true,
       alwaysShowContent: false,
       showDelay: 0,
       hideDelay: 100,
       textStyle: {
-        fontSize: 14
+        fontSize: 14,
       },
       borderWidth: 0,
-      padding: 5
+      padding: 5,
     },
     // grid: {
     //   left: "20%",
@@ -157,11 +168,11 @@ $(document).ready(() => {
             width: 1,
             opacity: 1,
             curveness: 0,
-            type: "solid"
-          }
+            type: "solid",
+          },
         },
-        data: null
-      }
+        data: null,
+      },
     ],
     yAxis: [
       {
@@ -174,7 +185,7 @@ $(document).ready(() => {
         axisTick: {
           show: true,
           alignWithLabel: false,
-          inside: false
+          inside: false,
         },
         inverse: false,
         offset: 0,
@@ -187,27 +198,25 @@ $(document).ready(() => {
             width: 1,
             opacity: 1,
             curveness: 0,
-            type: "solid"
-          }
-        }
-      }
+            type: "solid",
+          },
+        },
+      },
     ],
     title: [
       {
-        text:
-            "上海市疫情治愈人数变化趋势",
+        text: "上海市疫情治愈人数变化趋势",
         left: "center",
         padding: 5,
         itemGap: 10,
         textStyle: {
-          fontSize: 30
-        }
-      }
+          fontSize: 30,
+        },
+      },
     ],
   };
 
-
-  let discname = []
+  let discname = [];
   $.ajax({
     method: "get",
     url: "/api/discname",
@@ -215,8 +224,8 @@ $(document).ready(() => {
     contentType: "application/json",
     success: function (result) {
       discname = JSON.parse(result);
-    }
-  })
+    },
+  });
   $.ajax({
     method: "get",
     url: "/api/date/range",
@@ -225,8 +234,8 @@ $(document).ready(() => {
     success: function (result) {
       let date = JSON.parse(result);
       option.xAxis[0].data = date;
-    }
-  })
+    },
+  });
   $.ajax({
     method: "get",
     url: "/api/disct/all",
@@ -237,9 +246,12 @@ $(document).ready(() => {
       for (let i = 0; i < data.length; i++) {
         let nums = new Array();
         for (let j = data[i].length - 1; j >= 0; j--)
-          nums.push({"category": data[i][j].updateTime, "value": data[i][j].curedCount})
+          nums.push({
+            category: data[i][j].updateTime,
+            value: data[i][j].curedCount,
+          });
         option.series[i] = {
-          type: 'line',
+          type: "line",
           name: discname[i],
           connectNulls: false,
           symbolSize: 4,
@@ -253,26 +265,25 @@ $(document).ready(() => {
           label: {
             show: false,
             position: "top",
-            margin: 8
+            margin: 8,
           },
           lineStyle: {
-            "show": true,
-            "width": 4,
-            "opacity": 1,
-            "curveness": 0,
-            "type": "solid"
+            show: true,
+            width: 4,
+            opacity: 1,
+            curveness: 0,
+            type: "solid",
           },
           areaStyle: {
-            "opacity": 0
+            opacity: 0,
           },
           zlevel: 0,
-          z: 0
+          z: 0,
         };
         // myChart.setOption(option)
       }
-    }
-  })
-
+    },
+  });
 
   let isSet = false;
   $(document).on("scroll", function () {
@@ -285,7 +296,7 @@ $(document).ready(() => {
 });
 
 export default {
-  name: "Page"
+  name: "Page",
 };
 </script>
 
@@ -294,7 +305,17 @@ export default {
 #map4 {
   position: center;
   padding: 30px 0px;
-  width: 1400px;
   height: 900px;
+}
+
+p {
+  margin: 10px 20px;
+  text-align: left;
+  right: 0px;
+  font-size: 20px;
+  display: block;
+  color: #86868b;
+  font-family: "SF Pro SC", "SF Pro Display", "SF Pro Icons", "PingFang SC",
+  "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 </style>

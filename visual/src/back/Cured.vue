@@ -1,37 +1,27 @@
 <template>
   <div class="container">
-    <div class="row">
-      <div class="col-lg-3 col-md-4 d-flex flex-column">
-        <div class="mb-auto"></div>
-        <main>
-          <p>
-            从上海市各城区的疫情确诊人数变化趋势图中可以看出，疫情发展初期的确诊病例主要由本土病例构成，并在2月15日左右得到控制，表明上海市疫情已得到有效控制。其后增加的确诊病例基本为境外输入，增长速度与国际形势以及海关防控措施有直接联系。
-          </p>
-        </main>
-        <div class="mb-auto"></div>
-      </div>
-      <div id="map1" class="col-lg-9 col-md-8"></div>
-    </div>
+    <div id="map4" class="col-md-12"></div>
   </div>
 </template>
 
 <script>
 let echarts = require("echarts");
-let $ = require("jquery");
+let $ = require('jquery');
+
 
 $(document).ready(() => {
-  var myChart = echarts.init(document.getElementById("map1"), "white", {
-    renderer: "canvas",
-  });
+  var myChart = echarts.init(
+      document.getElementById("map4"),
+      'white', {renderer: 'canvas'});
   myChart.showLoading({
-    text: "数据正在加载...",
-    textStyle: {fontSize: 30, color: "#444"},
-    effectOption: {backgroundColor: "#999999"},
-  });
+    text: '数据正在加载...',
+    textStyle: { fontSize : 30 , color: '#444' },
+    effectOption: {backgroundColor: '#999999'}
+  })
   var option = {
     animation: true,
     animationThreshold: 2000,
-    animationDuration: 1000,
+    animationDuration: 5000,
     animationEasing: "cubicOut",
     animationDelay: 0,
     animationDurationUpdate: 300,
@@ -61,12 +51,11 @@ $(document).ready(() => {
       "#ac6767",
       "#1d953f",
       "#6950a1",
-      "#918597",
+      "#918597"
     ],
     series: [],
     legend: [
       {
-        type: "scroll",
         data: [
           "宝山区",
           "崇明区",
@@ -87,7 +76,7 @@ $(document).ready(() => {
           "未知地区",
           "徐汇区",
           "杨浦区",
-          "长宁区",
+          "长宁区"
         ],
         selected: {
           宝山区: true,
@@ -109,37 +98,37 @@ $(document).ready(() => {
           未知地区: true,
           徐汇区: true,
           杨浦区: true,
-          长宁区: true,
+          长宁区: true
         },
         show: true,
-        right: 0,
-        bottom: 0,
-        orient: "horizontal",
-        margin: 10,
+        right: 5,
+        top: 70,
+        orient: "vertical",
+        padding: 5,
         itemGap: 20,
-        itemWidth: 20,
-        itemHeight: 18,
+        itemWidth: 25,
+        itemHeight: 14,
         textStyle: {
-          fontSize: 16,
-        },
-      },
+          fontSize: 15
+        }
+      }
     ],
     tooltip: {
       show: true,
       trigger: "axis",
       triggerOn: "mousemove|click",
       axisPointer: {
-        type: "line",
+        type: "line"
       },
       showContent: true,
       alwaysShowContent: false,
       showDelay: 0,
       hideDelay: 100,
       textStyle: {
-        fontSize: 14,
+        fontSize: 14
       },
       borderWidth: 0,
-      padding: 5,
+      padding: 5
     },
     // grid: {
     //   left: "20%",
@@ -168,11 +157,11 @@ $(document).ready(() => {
             width: 1,
             opacity: 1,
             curveness: 0,
-            type: "solid",
-          },
+            type: "solid"
+          }
         },
-        data: null,
-      },
+        data: null
+      }
     ],
     yAxis: [
       {
@@ -185,7 +174,7 @@ $(document).ready(() => {
         axisTick: {
           show: true,
           alignWithLabel: false,
-          inside: false,
+          inside: false
         },
         inverse: false,
         offset: 0,
@@ -198,25 +187,27 @@ $(document).ready(() => {
             width: 1,
             opacity: 1,
             curveness: 0,
-            type: "solid",
-          },
-        },
-      },
+            type: "solid"
+          }
+        }
+      }
     ],
     title: [
       {
-        text: "上海市疫情确诊人数变化趋势",
+        text:
+            "上海市疫情治愈人数变化趋势",
         left: "center",
-        padding: 10,
+        padding: 5,
         itemGap: 10,
         textStyle: {
-          fontSize: 30,
-        },
-      },
+          fontSize: 30
+        }
+      }
     ],
   };
 
-  let discname = [];
+
+  let discname = []
   $.ajax({
     method: "get",
     url: "/api/discname",
@@ -224,8 +215,8 @@ $(document).ready(() => {
     contentType: "application/json",
     success: function (result) {
       discname = JSON.parse(result);
-    },
-  });
+    }
+  })
   $.ajax({
     method: "get",
     url: "/api/date/range",
@@ -234,8 +225,8 @@ $(document).ready(() => {
     success: function (result) {
       let date = JSON.parse(result);
       option.xAxis[0].data = date;
-    },
-  });
+    }
+  })
   $.ajax({
     method: "get",
     url: "/api/disct/all",
@@ -246,12 +237,9 @@ $(document).ready(() => {
       for (let i = 0; i < data.length; i++) {
         let nums = new Array();
         for (let j = data[i].length - 1; j >= 0; j--)
-          nums.push({
-            category: data[i][j].updateTime,
-            value: data[i][j].confirmCount,
-          });
+          nums.push({"category": data[i][j].updateTime, "value": data[i][j].curedCount})
         option.series[i] = {
-          type: "line",
+          type: 'line',
           name: discname[i],
           connectNulls: false,
           symbolSize: 4,
@@ -265,29 +253,30 @@ $(document).ready(() => {
           label: {
             show: false,
             position: "top",
-            margin: 8,
+            margin: 8
           },
           lineStyle: {
-            show: true,
-            width: 4,
-            opacity: 1,
-            curveness: 0,
-            type: "solid",
+            "show": true,
+            "width": 4,
+            "opacity": 1,
+            "curveness": 0,
+            "type": "solid"
           },
           areaStyle: {
-            opacity: 0,
+            "opacity": 0
           },
           zlevel: 0,
-          z: 0,
+          z: 0
         };
-        // myChart.setOption(option);
+        // myChart.setOption(option)
       }
-    },
-  });
+    }
+  })
+
 
   let isSet = false;
   $(document).on("scroll", function () {
-    if (!isSet && window.pageYOffset >= 1000) {
+    if (!isSet && window.pageYOffset >= 1900) {
       isSet = true;
       myChart.hideLoading();
       myChart.setOption(option);
@@ -296,26 +285,16 @@ $(document).ready(() => {
 });
 
 export default {
-  name: "Page",
+  name: "Page"
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-#map1 {
+#map4 {
   position: center;
   padding: 30px 0px;
+  width: 1400px;
   height: 900px;
-}
-
-p {
-  margin: 10px 20px;
-  text-align: left;
-  right: 0px;
-  font-size: 20px;
-  display: block;
-  color: #86868b;
-  font-family: "SF Pro SC", "SF Pro Display", "SF Pro Icons", "PingFang SC",
-  "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 </style>
