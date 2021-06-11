@@ -10,6 +10,8 @@
       <div class="b-example-divider w-100"></div>
       <Death/>
       <div class="b-example-divider w-100"></div>
+      <Classify/>
+      <div class="b-example-divider w-100"></div>
       <Map/>
     </main>
   </div>
@@ -21,6 +23,7 @@ import Change from './Change';
 import Death from './Death';
 import Cured from './Cured';
 import Map from './Map';
+import Classify from './Classify'
 import Avatar from './Nav';
 
 export default {
@@ -31,6 +34,7 @@ export default {
     Death,
     Cured,
     Map,
+    Classify,
     Avatar
   },
 }

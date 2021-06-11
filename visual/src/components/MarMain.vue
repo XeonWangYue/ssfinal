@@ -2,9 +2,9 @@
   <div>
     <Avatar/>
     <main>
-      <Cluster/>
-      <div class="b-example-divider w-100"></div>
       <Cloud/>
+      <div class="b-example-divider w-100"></div>
+      <Cluster/>
       <div class="b-example-divider w-100"></div>
       <Senti/>
     </main>
@@ -14,8 +14,8 @@
 <script>
 import Avatar from './Nav';
 import Senti from './Senti';
-import Cluster from './Classify';
 import Cloud from './Cloud';
+import Cluster from './Cluster'
 export default {
   name: 'MarMain',
   components: {
